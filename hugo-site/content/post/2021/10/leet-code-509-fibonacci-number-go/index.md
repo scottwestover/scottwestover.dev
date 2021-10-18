@@ -1,6 +1,6 @@
 ---
 title: LeetCode 509 - Fibonacci Number - Go
-date: 2021-09-21 00:00:01
+date: 2021-10-17 00:00:01
 tags: [
   "LeetCode",
   "Dynamic Programming"
@@ -38,3 +38,7 @@ func fib(n int) int {
     return fib(n-1) + fib(n-2)
 }
 ```
+
+![Tree graph representation of recursive calls 1](leet-code-509-fibonacci-number-go-1.png)
+
+![Tree graph representation of recursive calls 1](leet-code-509-fibonacci-number-go-2.png)
