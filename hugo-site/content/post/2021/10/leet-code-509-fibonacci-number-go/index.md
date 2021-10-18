@@ -42,3 +42,16 @@ func fib(n int) int {
 ![Tree graph representation of recursive calls 1](leet-code-509-fibonacci-number-go-1.png)
 
 ![Tree graph representation of recursive calls 1](leet-code-509-fibonacci-number-go-2.png)
+
+```go
+func fib(n int) int {
+    var table []int
+    // first two numbers in the sequence are 0 and 1
+    table = append(table, 0, 1)
+
+    for i := 2; i < n+1; i++ {
+        table = append(table, table[i-1]+table[i-2])
+    }
+
+    return table[n]
+```
