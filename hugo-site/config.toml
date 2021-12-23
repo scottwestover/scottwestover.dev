@@ -70,3 +70,6 @@ theme = "Mainroad"
   # Take care of different quotes OR escaping symbols in these params if necessary
   fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
   fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+[markup.goldmark.renderer]
+  unsafe = true

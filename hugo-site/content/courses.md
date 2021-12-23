@@ -22,4 +22,4 @@ In this free course on YouTube, you will learn the following:
 
 <div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/vcmGerkHyU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />
 
-You can also find the code for the course on GitHub here: <a href="https://github.com/scottwestover/learn-javascript-course" target="_blank">Learn JavaScript Course Files</a>
+You can also find the code for the course on GitHub here: [Learn JavaScript Course Files](https://github.com/scottwestover/learn-javascript-course).
