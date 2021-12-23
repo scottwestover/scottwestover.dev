@@ -2,7 +2,7 @@ baseurl = "https://scottwestover.dev/"
 title = "Scott Westover"
 languageCode = "en-us"
 paginate = "10" # Number of posts per page
-theme = "mainroad"
+theme = "Mainroad"
 # disqusShortname = "scottwestover" # Enable comments by entering your Disqus shortname
 # googleAnalytics = "UA-64333144-2" # Enable Google Analytics by entering your tracking id
 
