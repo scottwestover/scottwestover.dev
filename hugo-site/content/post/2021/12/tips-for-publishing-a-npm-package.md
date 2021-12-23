@@ -12,7 +12,7 @@ categories: [
   "Tutorial"
 ]
 desc: Some helpful tips and notes for publishing your first npm package.
-draft: true
+draft: false
 ---
 
 As a developer, one of the things I strive to do is reuse my code across my various projects when possible, and one of the best tools available to do this is the npm registry. If you are not familiar, npm is a package manager for the JavaScript programming language and npm is the default package manager for the Node.js runtime environment. npm is a free registry that allows you to publish both public and private npm packages that can be shared with other npm users.
