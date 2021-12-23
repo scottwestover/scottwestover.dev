@@ -15,7 +15,7 @@
 <meta itemprop=name content="Tips For Publishing A npm Package">
 <meta itemprop=description content="As a developer, one of the things I strive to do is reuse my code across my various projects when possible, and one of the best tools available to do this is the npm registry. If you are not familiar, npm is a package manager for the JavaScript programming language and npm is the default package manager for the Node.js runtime environment. npm is a free registry that allows you to publish both public and private npm packages that can be shared with other npm users."><meta itemprop=datePublished content="2021-12-22T00:00:01+00:00">
 <meta itemprop=dateModified content="2021-12-22T00:00:01+00:00">
-<meta itemprop=wordCount content="1201">
+<meta itemprop=wordCount content="1204">
 <meta itemprop=keywords content="NPM,NodeJS,Tutorial,">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Tips For Publishing A npm Package">
@@ -72,7 +72,11 @@
 </header>
 <div class="content post__content clearfix">
 <p>As a developer, one of the things I strive to do is reuse my code across my various projects when possible, and one of the best tools available to do this is the npm registry. If you are not familiar, npm is a package manager for the JavaScript programming language and npm is the default package manager for the Node.js runtime environment. npm is a free registry that allows you to publish both public and private npm packages that can be shared with other npm users.</p>
-<p>I had previously created a few npm packages and published these packages to the <a href=https://docs.github.com/en/packages>GitHub Packages</a> registry, and this was working great while I was the only one using these packages. However, I wanted to share some of my code with other developers, and there is currently a limitation with public packages hosted on the GitHub Packages registry where that anyone that wants to install the package is required to authenticate with the registry, which requires you to create a personal access token with the required scopes. If you are interested, you can read more about this here: <a href=https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages>Working with a GitHub Packages Registry</a>.</p>
+<p>I had previously created a few npm packages and published these packages to the
+<a href=https://docs.github.com/en/packages target=_blank rel=noopener>GitHub Packages</a>
+registry, and this was working great while I was the only one using these packages. However, I wanted to share some of my code with other developers, and there is currently a limitation with public packages hosted on the GitHub Packages registry where that anyone that wants to install the package is required to authenticate with the registry, which requires you to create a personal access token with the required scopes. If you are interested, you can read more about this here:
+<a href=https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages target=_blank rel=noopener>Working with a GitHub Packages Registry</a>
+.</p>
 <p>This was not something I wanted to force on other developers if they wanted to use one of the packages that I shared with the public, so I decided to publish some of these packages to npm. There are a lot of in depth tutorials on how to publish a npm package, however I found that some tutorials were limited and didn&rsquo;t contain all of the information that I needed, so I decided to document and share the steps that I took to publish a npm package.</p>
 <p>The purpose of this guide is to provide some helpful tips and notes for publishing a npm package and not to be a full guide to this process.</p>
 <h2 id=package-scope-name-and-visibility>Package Scope, Name, and Visibility</h2>
@@ -97,7 +101,9 @@
 <p>The <code>version</code> field must be in the form x.x.x and follow the semantic versioning guidelines.</p>
 <p>Another important field is the <code>main</code> field. The <code>main</code> field is used as the primary entry point to your program, and if this field is not provided then a default value of <code>index.js</code> will be used. As an example, if I have a file called <code>main.js</code> and this file exports my shared code, then I would want to make sure the <code>main</code> field is set to the <code>main.js</code> file.</p>
 <h2 id=keeping-files-out-of-your-package>Keeping Files Out Of Your Package</h2>
-<p>To exclude files from your npm package when you publish it, you can use the <code>.npmignore</code> file. This file is similar to the <code>.gitignore</code> file, and npm will ignore any files that match the contents in this file. By default, if you don&rsquo;t provide a <code>.npmignore</code> file, then npm will check to see if there is a <code>.gitignore</code> file, and use that file for ignore files. There is a also a variety of paths and file paths that are always ignored, and you can read more about these files here: <a href=https://docs.npmjs.com/cli/v8/using-npm/developers#testing-whether-your-npmignore-or-files-config-works>npmignore</a>.</p>
+<p>To exclude files from your npm package when you publish it, you can use the <code>.npmignore</code> file. This file is similar to the <code>.gitignore</code> file, and npm will ignore any files that match the contents in this file. By default, if you don&rsquo;t provide a <code>.npmignore</code> file, then npm will check to see if there is a <code>.gitignore</code> file, and use that file for ignore files. There is a also a variety of paths and file paths that are always ignored, and you can read more about these files here:
+<a href=https://docs.npmjs.com/cli/v8/using-npm/developers#testing-whether-your-npmignore-or-files-config-works target=_blank rel=noopener>npmignore</a>
+.</p>
 <h2 id=testing>Testing</h2>
 <p>Before publishing your npm package, it can be helpful to test your package locally. There are a number of ways to do this, and there are even tools to publish npm packages to a local registry. One of the easiest ways to test the install is to do a local install. To do this, go into some other folder and then do:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd ../some-other-folder
@@ -105,7 +111,9 @@ npm install ../my-package
 </code></pre></div><p>to install it locally into the node_modules folder in that other place.</p>
 <p>Then go into the node-repl, and try using require(&ldquo;my-thing&rdquo;) to bring in your module&rsquo;s main module.</p>
 <h2 id=publishing>Publishing</h2>
-<p>Before you can publish a npm package, you will need to sign up for a npm user account, which you can do here: <a href=https://www.npmjs.com/signup>npm signup</a>. Once you do this, you can either use the <code>npm login</code> command in your terminal to provide your npm user credentials or you can just run the <code>npm publish</code> command when you are ready to do so, and this will prompt you to login.</p>
+<p>Before you can publish a npm package, you will need to sign up for a npm user account, which you can do here:
+<a href=https://www.npmjs.com/signup target=_blank rel=noopener>npm signup</a>
+. Once you do this, you can either use the <code>npm login</code> command in your terminal to provide your npm user credentials or you can just run the <code>npm publish</code> command when you are ready to do so, and this will prompt you to login.</p>
 <p>By default, when you go to publish a scoped npm package, the package will be set to <code>private</code>. If you want to publish a public scoped npm package, you will need to pass an additional flag when running the publish command: <code>npm publish --access public</code>.</p>
 <p>Once you publish the package, you should be able to visit <code>https://npmjs.com/package/*package-name</code>, replacing package-name* with the name of your package, to see your new npm package.</p>
 <h2 id=updating-your-package>Updating Your Package</h2>
