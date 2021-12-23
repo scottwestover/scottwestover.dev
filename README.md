@@ -1,5 +1,7 @@
 # scottwestover.dev
 
+[![Publish Site](https://github.com/scottwestover/scottwestover.dev/actions/workflows/deploy.yaml/badge.svg)](https://github.com/scottwestover/scottwestover.dev/actions/workflows/deploy.yaml)
+
 This repository is a hugo website that contains all of the site content for my personal site [https://scottwestover.dev/](https://scottwestover.dev/).
 
 ## Prerequisite
