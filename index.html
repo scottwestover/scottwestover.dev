@@ -1,6 +1,6 @@
 <!doctype html><html class=no-js lang=en>
 <head>
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.91.0">
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
@@ -23,8 +23,6 @@
 <link rel=stylesheet href=/css/style.css>
 <link rel=alternate type=application/rss+xml href=/index.xml title="Scott Westover">
 <link rel="shortcut icon" href=/favicon.ico>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-64333144-2','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
 <body class=body>
 <div class="container container--outer">
@@ -44,6 +42,11 @@
 </button>
 <ul class=menu__list>
 <li class=menu__item>
+<a class=menu__link href=/courses/>
+<span class=menu__text>Courses</span>
+</a>
+</li>
+<li class=menu__item>
 <a class=menu__link href=/about/>
 <span class=menu__text>About Me</span>
 </a>
@@ -58,19 +61,18 @@
 <article class="list__item post">
 <header class=list__header>
 <h2 class="list__title post__title">
-<a href=/post/2021/09/kontra-v-7/ rel=bookmark>
-Kontra.js v7.0.0 Released
+<a href=/post/2021/12/tips-for-publishing-a-npm-package/ rel=bookmark>
+Tips For Publishing A npm Package
 </a>
 </h2>
 <div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-09-21T00:00:01Z>September 21, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/news/ rel=category>News</a>, <a class=meta__link href=/categories/kontrajs/ rel=category>KontraJS</a>
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2021-12-22T00:00:01Z>December 22, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/npm/ rel=category>NPM</a>, <a class=meta__link href=/categories/nodejs/ rel=category>NodeJS</a>, <a class=meta__link href=/categories/tutorial/ rel=category>Tutorial</a>
 </span>
 </div></div>
 </header>
 <div class="content list__excerpt post__content clearfix">
-The newest version of Kontra.js brings some breaking changes as well as a bunch of new features. Some of the new features include:
-TypeScript support New GameObject class that is now the parent of the Sprite class Button - allows you to create accessible buttons for your game Text - allows you to write text to the canvas Scene - helps you organize the different parts of your game and much more!
+As a developer, one of the things I strive to do is reuse my code across my various projects when possible, and one of the best tools available to do this is the npm registry. If you are not familiar, npm is a package manager for the JavaScript programming language and npm is the default package manager for the Node.js runtime environment. npm is a free registry that allows you to publish both public and private npm packages that can be shared with other npm users.
 </div>
 </article>
 </main>
@@ -105,15 +107,16 @@ TypeScript support New GameObject class that is now the parent of the Sprite cla
 <h4 class=widget__title>Recent Posts</h4>
 <div class=widget__content>
 <ul class=widget__list>
-<li class=widget__item><a class=widget__link href=/post/2021/09/kontra-v-7/>Kontra.js v7.0.0 Released</a></li>
+<li class=widget__item><a class=widget__link href=/post/2021/12/tips-for-publishing-a-npm-package/>Tips For Publishing A npm Package</a></li>
 </ul>
 </div>
 </div>
 <div class="widget-taglist widget">
 <h4 class=widget__title>Tags</h4>
 <div class=widget__content>
-<a class="widget-taglist__link widget__link btn" href=/tags/kontrajs/ title=KontraJS>KontraJS (1)</a>
-<a class="widget-taglist__link widget__link btn" href=/tags/news/ title=News>News (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/nodejs/ title=NodeJS>NodeJS (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/npm/ title=NPM>NPM (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/tutorial/ title=Tutorial>Tutorial (1)</a>
 </div>
 </div>
 <div class="widget-categories widget">
@@ -121,9 +124,11 @@ TypeScript support New GameObject class that is now the parent of the Sprite cla
 <div class=widget__content>
 <ul class=widget__list>
 <li class=widget__item>
-<a class=widget__link href=/categories/kontrajs/>KontraJS</a></li>
+<a class=widget__link href=/categories/nodejs/>NodeJS</a></li>
 <li class=widget__item>
-<a class=widget__link href=/categories/news/>News</a></li>
+<a class=widget__link href=/categories/npm/>NPM</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/tutorial/>Tutorial</a></li>
 </ul>
 </div>
 </div>
