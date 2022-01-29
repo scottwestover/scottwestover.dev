@@ -22,7 +22,7 @@ git submodule update --init --recursive
 
 ## Running Locally
 
-To run the site locally, run the follwoing command from the `hugo-site` folder:
+To run the site locally, run the following command from the `hugo-site` folder:
 
 ```Bash
 hugo server -D

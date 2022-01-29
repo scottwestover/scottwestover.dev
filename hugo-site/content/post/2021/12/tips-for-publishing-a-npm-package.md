@@ -26,6 +26,7 @@ The purpose of this guide is to provide some helpful tips and notes for publishi
 ## Package Scope, Name, and Visibility
 
 Before publishing your npm package, you will need to answer a few questions regarding your package:
+
 - What will the name of your package be?
 - Should my package be public or private?
 - Should my package be scoped or not?
@@ -35,6 +36,7 @@ If you are not familiar with scopes and npm packages, a scope is basically a nam
 Note: The scope name is everything between the `@` and the slash.
 
 Besides adding a prefix to the npm package name, the `@angular` part, there are a few other benefits to scopes:
+
 - A scope allows you to create a package with the same name as another package that was created by another user or organization
 - A scoped package can be private, which allows you to control who can access your npm package.
 
