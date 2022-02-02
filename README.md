@@ -1,6 +1,8 @@
-# Blog Content for scottwestover.github.io
+# scottwestover.dev
 
-This repository is a hugo website that contains all of the site content for my personal site [https://scottwestover.github.io/](https://scottwestover.github.io/).
+[![Publish Site](https://github.com/scottwestover/scottwestover.dev/actions/workflows/deploy.yaml/badge.svg)](https://github.com/scottwestover/scottwestover.dev/actions/workflows/deploy.yaml)
+
+This repository is a hugo website that contains all of the site content for my personal site [https://scottwestover.dev/](https://scottwestover.dev/).
 
 ## Prerequisite
 
@@ -8,26 +10,26 @@ You will need to have [hugo](https://gohugo.io/getting-started/quick-start/) ins
 
 This repository also contains two submodules, so you will need to either clone this repository with the following command:
 
-```bash
-git clone --recursive https://github.com/scottwestover/blog.git
+```Bash
+git clone --recursive https://github.com/scottwestover/scottwestover.dev.git
 ```
 
 Or, if you have already cloned the repo you will need to run the following command:
 
-```bash
+```Bash
 git submodule update --init --recursive
 ```
 
 ## Running Locally
 
-To run the site locally, run the following command from the `hugo-site` subfolder:
+To run the site locally, run the following command from the `hugo-site` folder:
 
-```bash
+```Bash
 hugo server -D
 ```
 
-This will start the hugo server locally, and you can view the site on <http://localhost:1313/>.
+This will start the hugo server locally, and you can view the site on http://localhost:1313/.
 
 ## Deploying
 
-Coming soon...
+This repository makes use of GitHub Actions to deploy the site to GitHub Pages any time there is a new commit to the main branch.

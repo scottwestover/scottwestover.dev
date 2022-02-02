@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-date: "2021-09-22"
+date: "2021-12-22"
 description: "About Me"
 # thumbnail: "img/placeholder.jpg"
 disable_comments: true
