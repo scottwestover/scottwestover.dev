@@ -32,4 +32,4 @@ This will start the hugo server locally, and you can view the site on http://loc
 
 ## Deploying
 
-This repoistory makes use of GitHub Actions to deploy the site to GitHub Pages any time there is a new commit to the main branch.
+This repository makes use of GitHub Actions to deploy the site to GitHub Pages any time there is a new commit to the main branch.
