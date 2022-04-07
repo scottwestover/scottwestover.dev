@@ -1,6 +1,6 @@
 ---
 title: Developer Bytes - Plop
-date: 2022-04-06 00:00:02
+date: 2022-04-07 00:00:02
 tags: [
   "Developer Bytes",
   "Plop"
@@ -13,4 +13,18 @@ desc: Help your team build new files with consistency with Plop!
 draft: true
 ---
 
-Today, I wanted to share one....
+For the first Developer Bytes article, I wanted to share with everyone a tool that I have found extremely useful and easy to use called [Plop](https://github.com/plopjs/plop). Plop is a micro-generator framework that can be used for generating new files in a consistent manner using templates you define. This simple tool gives you a way to generate code or any type of file, by running a simple console command.
+
+This is all done via the config plop file that is written in JavaScript, where you specify the commands for the various generators you want to create. Then you just need to create your template files, which are written in [handlebars](https://handlebarsjs.com/). Once you do this, you just run `plop` and you will be prompted to answer questions based on the configuration you provided.
+
+## How Plop Helps
+
+Over the past year and half or so, I had been assigned to work a few VueJS web applications and one of the common tasks I would often run into is creating a new component. Now, this is a simple task and something than be quite repetitive when having to create a bunch of components for a new feature or new web app. As an example, I would need to create the following files:
+
+- 3 files for the component, a vue, css, and ts file
+- 1 file for the storybook stories for the component
+- 1 file for the unit tests
+
+For the most part, I could just copy and past the files from one component to another, but then I would need to spend the time renaming the files and fixing references in those files. This can be a quick process, but over time the amount of time spent doing this adds up quickly.
+
+This is where Plop comes in, instead of me having to do the above steps every time I want to create a component in the project, I just need to run the following command `plop`, and answer a few inputs regarding the name of the component. Plop will then generate all of my files with the correct file names and the correct references.
