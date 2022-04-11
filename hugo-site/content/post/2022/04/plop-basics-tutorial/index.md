@@ -1,6 +1,6 @@
 ---
 title: Plop Basics Tutorial
-date: 2022-04-09 00:00:02
+date: 2022-04-11 00:00:02
 tags: [
   "Tutorial",
   "Plop",
@@ -12,7 +12,7 @@ categories: [
   "Vue"
 ]
 desc: A brief tutorial on getting started with Plopjs!
-draft: true
+draft: false
 ---
 
 In one of my recent developer bytes articles, I discussed with you some of the benefits of the micro-generator framework tool [Plop](https://github.com/plopjs/plop) and how I used this tool in my day to day. In this article I want to expand on the example the example I shared in the last article. So, in this tutorial we will be creating a Plop generator that will create a Vue component in TypeScript, and we will be going over the basics to create your own generators.
@@ -81,6 +81,55 @@ npm run plop
 ```
 
 ![Output of plop with no config](./plop-basics-tutorial-1.png)
+
+## Template Files
+
+The template files are [handlebars](https://handlebarsjs.com/) files (*.hbs), which are basically files that allow you to add variables to them and when the generator runs those variables will be populated in the files that are produced as output. All of the variables in these files needs to be placed between `{{handlebars}}`. For our templates, we will end up only using two variables: one for the filename and another one for the name of the Vue component that will be built.
+
+To get started create a new directory called: `plop/component` and in this directory create three files with the following names:
+
+- `{{filename}}.css.hbs`
+- `{{filename}}.ts.hbs`
+- `{{filename}}.vue.hbs`
+
+When the generator runs the `{{filename}}` part of the file will be replaced with the value we provide for the `filename` variable. In addition to this, the `.hbs` file extension will be removed, which means we will be left with left files for our component: a css, ts, and vue file.
+
+Next, add the following code to each of the files:
+
+`{{filename}}.css.hbs`
+
+```handlebars
+.{{filename}}-container {
+  padding: 0px;
+}
+```
+
+`{{filename}}.ts.hbs`
+
+```handlebars
+import { Options, Vue } from 'vue-property-decorator';
+
+@Options({})
+export default class {{componentName}} extends Vue {}
+
+```
+
+`{{filename}}.vue.hbs`
+
+```handlebars
+<template>
+  <div class="{{filename}}-container">{{ componentName }}</div>
+</template>
+
+<script lang="ts" src="./{{filename}}.ts"></script>
+
+<style scoped src="./{{filename}}.css" />
+```
+
+As you can see, these files do not have much code and will only create a simple Vue component. In our template files, we are expecting two variables:
+
+- `filename` - the name that will be used for our files. This variable will be provided as input when we run Plop.
+- `componentName`- the name of our component. This variable will be dynamically created from the `filename` variable.
 
 ## Create Plop Config
 
@@ -152,3 +201,49 @@ In order to use custom actions, you need to define them by using the `setActionT
 - `answers` - answers to the generator prompts
 - `config` - the object in the "actions" array for the generator
 - `plop` - the plop api for the plopfile where this action is being run
+
+In our example, the `createComponentName` action is used to create a new property called `componentName` which we will use in our template files. The `componentName` is based on the `filename` value that is provided by the user.
+
+### Prompts
+
+Prompts are the questions that will be shown to the user when a generator is run. The `prompts` field takes an array of [Inquirer](https://github.com/SBoudrias/Inquirer.js/) questions. In our example, we are only asking one question since we only need to populate one variable. Our question has the following fields:
+
+- `type` - set to `input` since we are prompting the user to type in their response
+- `name` - the name of the variable that we are using in the templates
+- `message` - the message to display to the user in the console
+
+## Testing Our Generator
+
+Now that we have all of our files in place, we can test our generator. We can do this by running the following command:
+
+```bash
+# yarn
+yarn plop
+
+# npm
+npm run plop
+```
+
+This will result in Plop running our one generator and you should be prompted for the `filename` variable. If you input, `test-component`, you should see a confirmation message about the new files being created, and you should see the three new files in a sub folder under the `src/components` folder.
+
+![New component files](./plop-basics-tutorial-2.png)
+
+In addition to prompting users for input, we can provide those values directly to the `plop` command when we run it. The general structure of this command is:
+
+```bash
+plop [generator_name] [first_prompt_value] [...prompt_values]
+```
+
+So, in our example if we ran the following command, it would result in the same output as the command we ran above:
+
+```bash
+# yarn
+yarn plop component test-component
+
+# npm
+npm run plop component test-component
+```
+
+## Summary
+
+In this tutorial, we learned how we could use Plop to generate files based on the templates we provide. I hope you found this article helpful. Please feel free to post any questions or comments below.
