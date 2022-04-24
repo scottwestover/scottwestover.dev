@@ -1,6 +1,6 @@
 ---
 title: HTML5 Game Prototyping Course - Part 1
-date: 2022-04-11 00:00:02
+date: 2022-04-25 00:00:02
 tags: [
   "Tutorial",
   "HTML5",
