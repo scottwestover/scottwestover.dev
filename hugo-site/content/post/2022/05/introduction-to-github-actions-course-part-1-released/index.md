@@ -17,7 +17,7 @@ desc: Part 1 of my Introduction To GitHub Actions Course is now available!
 draft: false
 ---
 
-Today, I am happy to announce that part 1 of my Introduction To GitHub Actions course is now available and can be watched on YouTube here: <a href="https://youtu.be/6FZEfoRlSXc" target="_blank">Part 1 - Introduction</a>.
+Today, I am happy to announce that part 1 of my Introduction To GitHub Actions course is now available and can be watched on YouTube here: <a href="https://youtu.be/6FZEfoRlSXc" target="_blank">Introduction</a>.
 
 <div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/6FZEfoRlSXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />
 
