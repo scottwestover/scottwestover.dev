@@ -14,7 +14,7 @@ categories: [
   "YouTube"
 ]
 desc: Part 2 of my Introduction To GitHub Actions Course is now available!
-draft: true
+draft: false
 ---
 
 Today, I am happy to announce that part 2 of my Introduction To GitHub Actions course is now available and can be watched on YouTube here: <a href="https://youtu.be/Bmp6oWgwS1c" target="_blank">GitHub Actions & Workflows</a>.
