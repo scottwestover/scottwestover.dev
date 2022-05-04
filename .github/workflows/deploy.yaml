@@ -3,7 +3,9 @@ name: Publish Site
 on:
   push:
     branches:
-      - master
+      - main
+    paths:
+      - hugo-site/content/**
   workflow_dispatch:
 
 jobs:
