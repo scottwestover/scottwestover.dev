@@ -14,7 +14,7 @@ categories: [
   "YouTube"
 ]
 desc: Part 6 of my Introduction To GitHub Actions Course is now available!
-draft: true
+draft: false
 ---
 
 Today, I am happy to announce that part 6 of my Introduction To GitHub Actions course is now available and can be watched on YouTube here: <a href="https://youtu.be/_Jenrwr86kI" target="_blank">GitHub Marketplace</a>.
