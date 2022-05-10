@@ -14,7 +14,7 @@ categories: [
   "YouTube"
 ]
 desc: Part 7 of my Introduction To GitHub Actions Course is now available!
-draft: true
+draft: false
 ---
 
 Today, I am happy to announce that part 7 of my Introduction To GitHub Actions course is now available and can be watched on YouTube here: <a href="https://youtu.be/qXirDGGrG34" target="_blank">Integration Test and CRON Workflow</a>.
