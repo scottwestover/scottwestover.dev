@@ -24,3 +24,4 @@ Today, I am happy to announce that part 12 of my Introduction To GitHub Actions 
 In todays video, I wrap up the Introduction to GitHub Actions mini course and give a high level overview of all of the content we covered.
 
 I hope you enjoy the new content! Please feel free to post any questions or comments below.
+
