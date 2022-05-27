@@ -1,6 +1,7 @@
 ---
 title: Plop Basics Tutorial
 date: 2022-04-11 00:00:02
+lastmod: 2022-05-27 00:00:02
 tags: [
   "Tutorial",
   "Plop",
@@ -14,6 +15,8 @@ categories: [
 desc: A brief tutorial on getting started with Plopjs!
 draft: false
 ---
+
+*Update:* If you would prefer to watch a video on this content, you can see the content here on YouTube: <a href="hhttps://youtu.be/DzHnPS3rjFo" target="_blank">Developer Bytes - Generating Templates With Plopjs</a>.
 
 In one of my recent developer bytes articles, I discussed with you some of the benefits of the micro-generator framework tool [Plop](https://github.com/plopjs/plop) and how I used this tool in my day to day. In this article I want to expand on the example the example I shared in the last article. So, in this tutorial we will be creating a Plop generator that will create a Vue component in TypeScript, and we will be going over the basics to create your own generators.
 

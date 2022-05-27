@@ -5,13 +5,15 @@ tags: [
   "GitHub",
   "GitHub Actions",
   "Course",
-  "YouTube"
+  "YouTube",
+  "Video"
 ]
 categories: [
   "GitHub",
   "GitHub Actions",
   "Course",
-  "YouTube"
+  "YouTube",
+  "Video"
 ]
 desc: Part 11 of my Introduction To GitHub Actions Course is now available!
 draft: false
