@@ -14,7 +14,7 @@ desc: Help your team build new files with consistency with Plop!
 draft: false
 ---
 
-*Update:* If you would prefer to watch a video on this content, you can see the content here on YouTube: <a href="hhttps://youtu.be/DzHnPS3rjFo" target="_blank">Developer Bytes - Generating Templates With Plopjs</a>.
+*Update:* If you would prefer to watch a video on this content, you can see the content here on YouTube: <a href="https://youtu.be/DzHnPS3rjFo" target="_blank">Developer Bytes - Generating Templates With Plopjs</a>.
 
 For the first Developer Bytes article, I wanted to share with everyone a tool that I have found extremely useful and easy to use called [Plop](https://github.com/plopjs/plop). Plop is a micro-generator framework that can be used for generating new files in a consistent manner using templates you define. This simple tool gives you a way to generate code or any type of file, by running a simple console command.
 

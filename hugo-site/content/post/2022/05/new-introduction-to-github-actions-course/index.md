@@ -1,6 +1,7 @@
 ---
 title: New Introduction To GitHub Actions Course
 date: 2022-05-03 00:00:02
+lastmod: 2022-05-27 00:00:02
 tags: [
   "GitHub",
   "GitHub Actions",
@@ -18,6 +19,8 @@ draft: false
 ---
 
 ![Introduction To GitHub Actions Course](./new-introduction-to-github-actions-course-1.png)
+
+*Update:* I have released a video that contents all of the content for the course as a single video. You can watch the video on YouTube here: <a href="https://youtu.be/n4u27KJhEB4" target="_blank">Introduction To GitHub Actions - Full Course</a>.
 
 Today I am happy to announce that I will be releasing a brand new mini course on an introduction to GitHub Actions that you will be able to watch for free on YouTube. Over the next two weeks, there will be a new video available to watch each day with the first video being available tomorrow!
 
