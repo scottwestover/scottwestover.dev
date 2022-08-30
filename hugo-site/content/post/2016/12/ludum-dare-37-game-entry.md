@@ -20,7 +20,7 @@ This past weekend, I got the chance to participate in the Ludum Dare game jam. I
 <br />
 This time around the theme was "One Room", so my teammates and I came up with the idea that you would play as a room in a house, and you would need to fight the rest of rooms to be the best room in the house. The game was going to be a 2D "fighting" game, but with the combat being very basic.<br />
 <br />
-The game itself was made in Unity, all the audio was original, and most of the art was original this time. If you are interested in seeing our finished project, you can see it here:&nbsp;<a href="http://scottwestover.github.io/games/RoomWars/" target="_blank"><span style="color: blue;">http://scottwestover.github.io/games/RoomWars/</span></a><br />
+The game itself was made in Unity, all the audio was original, and most of the art was original this time. If you are interested in seeing our finished project, you can see it here:&nbsp;<a href="https://scottwestover.dev/games/RoomWars/index.html" target="_blank"><span style="color: blue;">http://scottwestover.github.io/games/RoomWars/</span></a><br />
 <br />
 You can also view the game on Ludum Dare here:&nbsp;<a href="http://ludumdare.com/compo/ludum-dare-37/?action=preview&amp;uid=113176" target="_blank"><span style="color: blue;">http://ludumdare.com/compo/ludum-dare-37/?action=preview&amp;uid=113176</span></a><br />
 <br />
