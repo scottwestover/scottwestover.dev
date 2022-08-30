@@ -18,7 +18,7 @@ categories: [
   "Itchio"
 ]
 desc: A new follow up video to my Introduction To GitHub Actions course that shows you how to automate deployments to Itch.io with GitHub Actions!
-draft: true
+draft: false
 ---
 
 If you deploy content to [itch.io](https://itch.io/), and if you are looking for a way to automate deployments to this platform, you can achieve this with [GitHub Actions](https://github.com/features/actions)!
