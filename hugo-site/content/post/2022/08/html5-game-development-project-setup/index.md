@@ -98,9 +98,7 @@ If the plugin did not automatically open your browser, you can visit [http://127
 
 ## Create index.html
 
-For our web application, we will need to create an `index.html` file. This file will be the root of our application and is what will be served to the end user when they go to view our game.
-
-In the `index.html` file, add the following code:
+For our web application, we will need to create an `index.html` file. This file will be the root of our application and is what will be served to the end user when they go to view our game. In the `src` folder, create a new file called `index.html` and add the following code to the file:
 
 ```html
 <!DOCTYPE html>
@@ -138,3 +136,16 @@ In the `index.html` file, add the following code:
   </body>
 </html>
 ```
+
+In the code above, we did the following:
+
+* created a basic HTML page with the typical HTML tags that are needed for a web page
+* added some basic styling to the web page using the `style` HTML tag
+* set the users viewport by adding the `<meta>` HTML tag, which tells the web browser how to control the pages scaling and page dimensions
+* created an HTML Canvas element with `<canvas>` HTML tag, and set the width and height dimensions on the element
+* referenced a new JavaScript file called `main.js` that will be the main code entry point for our game
+
+*Note:* in this series we will not be covering topics like `CSS`, `HTML`, and `JavaScript`, and we will be focusing on just creating games using JavaScript with HTML5 Canvas. You should be able to follow along if you don't have experience with `CSS` and `HTML`, but some experience with `JavaScript` is expected since we will not be going over the basics. However, I will try to keep these topics as beginner friendly as possible.
+
+TODO: add link to course on JavaScript here
+
