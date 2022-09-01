@@ -1,22 +1,20 @@
 ---
 title: HTML5 Game Development - Project Setup
-date: 2022-08-30 08:00:02
+date: 2022-09-01 06:00:02
 tags: [
   "HTML5",
   "Game Development",
   "JavaScript",
-  "YouTube",
   "Tutorial"
 ]
 categories: [
   "HTML5",
   "Game Development",
   "JavaScript",
-  "YouTube",
   "Tutorial"
 ]
 desc: In our first post of this new series, we will work on setting up our development environment.
-draft: true
+draft: false
 ---
 
 Before we start learning about HTML5 Canvas and start writing any code, the first thing we need to do is setup a development environment that will allow us to easily edit our files, serve our static files on a local web server, and view our changes in real time as we make them.
@@ -38,15 +36,15 @@ Now that you have created the basic project structure, you will need to open `ht
 
 To do this, open VS Code and in the menu, click on `File -> Open Folder` and then select the `html5-javascript-games` folder.
 
-![Open project from menu in VS Code](./images/html5-javascript-games-project-setup-1.png)
+![Open project from menu in VS Code](./images/html5-game-development-project-setup-1.png)
 
 You can also click on `Open Folder` from the sidebar and then select the `html5-javascript-games` folder.
 
-![Open project from sidebar in VS Code](./images/html5-javascript-games-project-setup-2.png)
+![Open project from sidebar in VS Code](./images/html5-game-development-project-setup-2.png)
 
 You should see the `src` folder in the sidebar:
 
-![VS Code project view](./images/html5-javascript-games-project-setup-3.png)
+![VS Code project view](./images/html5-game-development-project-setup-3.png)
 
 ## Local Web Server
 
@@ -68,11 +66,11 @@ For this series, we will be using a VS Code plugin called [LiveServer](https://m
 
 In order to install the plugin, in the menu of VS Code, click on `View -> Extensions` and this should then open the Extensions sidebar.
 
-![VS Code extensions view](./images/html5-javascript-games-project-setup-4.png)
+![VS Code extensions view](./images/html5-game-development-project-setup-4.png)
 
 You can also click on the `Extensions` icon on the sidebar in VS Code.
 
-![VS Code extension view from sidebar](./images/html5-javascript-games-project-setup-5.png)
+![VS Code extension view from sidebar](./images/html5-game-development-project-setup-5.png)
 
 Once the Extensions panel is open, search for `Live Server`, and then click on the install button to have VS Code add this new plugin.
 
@@ -80,7 +78,7 @@ Once the Extensions panel is open, search for `Live Server`, and then click on t
 
 Once the plugin is installed, there will be a new `Go Live` button at the footer bar of VS Code:
 
-![Live Server go live footer button](./images/html5-javascript-games-project-setup-6.png)
+![Live Server go live footer button](./images/html5-game-development-project-setup-6.png)
 
 If you click on this button, the plugin will start the local web server, and open a new web page in your browser.
 
@@ -88,13 +86,13 @@ The plugin will default to using port `5500` on your computer, and will generall
 
 If the plugin did not automatically open your browser, you can visit [http://127.0.0.1:5500/](http://127.0.0.1:5500/) to view the local web server instance.
 
-![Local web server showing project files](./images/html5-javascript-games-project-setup-7.png)
+![Local web server showing project files](./images/html5-game-development-project-setup-7.png)
 
 *Note:* you can also start and stop Live Server by using the Command Palette in VS Code. To access Live Server from the Command Palette, if you go to the menu in VS Code and click on `View -> Command Palette`, this will open a new drop down where you can enter text. If you type `Live Server`, you should see options to start and stop the server.
 
-![Opening VS Code Command Palette](./images/html5-javascript-games-project-setup-8.png)
+![Opening VS Code Command Palette](./images/html5-game-development-project-setup-8.png)
 
-![Start Live Server from VS Code Command Palette](./images/html5-javascript-games-project-setup-9.png)
+![Start Live Server from VS Code Command Palette](./images/html5-game-development-project-setup-9.png)
 
 ## Create index.html
 
@@ -145,7 +143,44 @@ In the code above, we did the following:
 * created an HTML Canvas element with `<canvas>` HTML tag, and set the width and height dimensions on the element
 * referenced a new JavaScript file called `main.js` that will be the main code entry point for our game
 
-*Note:* in this series we will not be covering topics like `CSS`, `HTML`, and `JavaScript`, and we will be focusing on just creating games using JavaScript with HTML5 Canvas. You should be able to follow along if you don't have experience with `CSS` and `HTML`, but some experience with `JavaScript` is expected since we will not be going over the basics. However, I will try to keep these topics as beginner friendly as possible.
+*Note:* in this series we will not be covering topics like `CSS`, `HTML`, and `JavaScript` basics, and we will be focusing on just creating games using JavaScript with HTML5 Canvas. You should be able to follow along if you don't have experience with `CSS` and `HTML`, but some experience with `JavaScript` is expected since we will not be going over the basics. However, I will try to keep these topics as beginner friendly as possible.
 
-TODO: add link to course on JavaScript here
+If you need to learn more about the basics in JavaScript, or if you need a refresher, please check out my free course on YouTube here: [JavaScript 101](https://www.youtube.com/playlist?list=PLmcXe0-sfoSgHQRKVWeJuIldauc9dL4rR).
 
+## Create main.js
+
+Before we test our web page, we will need to create the `main.js` file that is referenced in the `index.html` file. To do this, create a new folder in the `src` folder called `js`. In the `js` folder, create a new file called `main.js` and add the following code:
+
+```javascript
+console.log('hello world');
+```
+
+In the code above, we used the `console.log` method to log a message to the web browser developer console.
+
+With the newly crated `main.js` file, we can test our project and make sure everything is working correctly. If you launch the local web server and visit [http://localhost:5500/src/index.html](http://localhost:5500/src/index.html) in your web browser, you should see the newly created web page, that has a basic canvas element.
+
+If you open the developer console, you should see the `hello world` message that we logged.
+
+![Logged message in the web browser developer console](./images/html5-game-development-project-setup-10.png)
+
+You can open the developer console by going to the menu in Google Chrome and then clicking on `View -> Developer -> Developer Tools`. In the sidebar that opens, click on the `Console` tab.
+
+![Opening web browser developer console in Google Chrome](./images/html5-game-development-project-setup-11.png)
+
+## Wrap Up
+
+Our basic project is now setup and we can now begin learning about the HTML Canvas element, and how we can use this element with JavaScript to create games! Your project should look like the following:
+
+```markdown
+  .
+  ├── src               - contains all of the code for our project template
+  │   ├── js
+  │   │   ├── main.js   - the main entry point for our JavaScript code
+  |   ├── index.html    - the root of our web application
+```
+
+You can find the completed source code for this section here on GitHub: [Project Setup](https://github.com/devshareacademy/html5-javascript-games/releases/tag/project_setup). If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/html5-javascript-games/discussions).
+
+In the next few articles in this series, we will covering some optional topics like: JavaScript Modules and enhancing the VS Code Intellisense with the `jsconfig.json` file. These articles are meant to provide supplementary information for this course and to provide a better developer experience.
+
+If you would like to skip these articles and get started learning about the Canvas element, please start at part one (link coming soon...).
