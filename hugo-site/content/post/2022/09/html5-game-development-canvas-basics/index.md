@@ -1,6 +1,6 @@
 ---
 title: HTML5 Game Development - Canvas Basics
-date: 2022-09-01 06:00:02
+date: 2022-09-06 06:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -60,3 +60,96 @@ If you go back to your web browser and view the developer console, you should se
 If you inspect the `ctx` object, you will see there is a large number of properties and methods on this object, and all of these can be utilized for when we draw to the canvas element.
 
 ## Drawing on the canvas
+
+So now that we have our canvas rendering context object, we can start to use this object to draw to our canvas element. To do this this, add the following code to the `main.js` file:
+
+```javascript
+// draw squares
+ctx.strokeRect(10, 10, 50, 50);
+ctx.fillRect(70, 10, 50, 50);
+```
+
+If you save your code changes and go to your web browser, you should see two squares appear on the canvas element.
+
+![Two basic black square shapes on the canvas element](./images/html5-game-development-canvas-basics-3.png)
+
+In the code above, we used two methods on the `CanvasRenderingContext2D` object: `strokeRect` and `fillRect`.
+
+### `strokeRect`
+
+The `strokeRect` method will draw a rectangle shape to the canvas using the current context object properties. This method has four parameters: `x`, `y`, `width`, and `height`. The first two parameters, `x` and `y` are used to define the coordinates of where we will start to draw the rectangle, and the last two parameters, `width` and `height` are used to define the size of the rectangle that will be drawn.
+
+A good way to think of the `strokeRect` method is to imagine you are drawing a rectangle on a piece of paper. You place the pencil on the paper at a starting point and then draw the outline of the rectangle and stop there without filling in the rectangle with any color.
+
+In the code above, we specificied `50` for both the `width` and `height` arguments, which resulted in us drawing a square shape.
+
+When we draw onto the canvas element, the top left corner of the canvas element is considered coordinate (0, 0) and as `x` increases in value, the further to the right we move, and as `y` increases in value, the further down we move.
+
+![The canvas coordinate system](./images/html5-game-development-canvas-basics-4.png)
+
+### `fillRect`
+
+The `fillRect` method will draw and fill in a rectangle shape to the canvas using the current context object properties. This method has the same four parameters as `strokeRect` and functions in a similar manner. A good way to think of the `fillRect` method is if you imagine you have already drawn a rectangle on a piece of paper, you will now fill in that rectangle shape with your pencil.
+
+## Adding Color
+
+By default, the `CanvasRenderingContext2D` object has the `fillStyle` and `strokeStyle` properties set to `#000000`, which is `black`. These two properties are used to determine which color should be used when we draw to the canvas. When we used the `strokeRect` and `fillRect` methods, both of these methods will use the shared properties on the `ctx` object, which is why our two rectangles are `black`.
+
+In order to draw with a different color, we can set these properties to a different value. To do this, add the following code to `main.js`:
+
+```javascript
+// draw squars that blue
+ctx.strokeStyle = '#0000FF';
+ctx.fillStyle = 'blue';
+ctx.strokeRect(10, 70, 50, 50);
+ctx.fillRect(70, 70, 50, 50);
+```
+
+If you save your code changes and go to your web browser, you should see two new squares appear on the canvas element.
+
+![Four squares drawn on canvas element](./images/html5-game-development-canvas-basics-5.png)
+
+In the code above, we set the `fillStyle` and `strokeStyle` properties set to `blue` (`#0000FF` is the Hex code version of blue). These two properties can accept any of the following:
+
+* `color` - a string parsed as CSS color value
+* `gradient` - a canvas gradient object, which is a linear or radial gradient
+* `pattern` - a canvas pattern object that is a repeating image
+
+After we set these two properties, we drew two new rectangle shapes, and since we updated the shared `ctx` object, both of these shapes are now drawn using `blue` instead of `black`.
+
+## Drawing Order
+
+So far in our examples, we have setup the positioning of our shapes to intentionaly not have them overlap. The reasoning for this is that when we draw to the canvas element, each pixel is updated individually. As an example, if you add the following code to the `main.js` file:
+
+```javascript
+ctx.fillStyle = 'red';
+ctx.fillRect(10, 130, 50, 50);
+ctx.fillStyle = 'yellow';
+ctx.fillRect(40, 130, 50, 50);
+```
+and save your code and view the changes in your browser, you should see two new squares appear on the canvas element that are overlapping.
+
+![Overlapping squares on the canvas element](./images/html5-game-development-canvas-basics-6.png)
+
+What is happening here, is when we call the first `fillRect` method, the code is executed and we draw the full red square shape to the canvas element. Then, when we call the second `fillRect` method, because some of the pixels are part of the first square, these pixels are now updated to have the color yellow. This results in our canvas looking like we have a small red rectangle next to the yellow square.
+
+Since the code is synchronous, we will always draw to the canvas in the oder that we specify in our code. As an example, if you flip the order of the code around to be:
+
+```javascript
+ctx.fillStyle = 'yellow';
+ctx.fillRect(40, 130, 50, 50);
+ctx.fillStyle = 'red';
+ctx.fillRect(10, 130, 50, 50);
+```
+
+you will see the opposite affect, even though we are drawing the two shapes in the exact positions as before.
+
+![Overlapping squares on the canvas element](./images/html5-game-development-canvas-basics-7.png)
+
+## Wrap up
+
+In this article, we learned about the basics of working with the HTML Canvas element and we saw how we can use the Canvas Context element to interact and draw on the HTML Canvas element.
+
+You can find the completed source code for this section here on GitHub: [Project Setup](https://github.com/devshareacademy/html5-javascript-games/releases/tag/project_setup). If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/html5-javascript-games/discussions).
+
+In the next article of this series, we will learn about the canvas state and how we can use built in methods to save and revert changes to the state.
