@@ -167,7 +167,7 @@ You can open the developer console by going to the menu in Google Chrome and the
 
 ![Opening web browser developer console in Google Chrome](./images/html5-game-development-project-setup-11.png)
 
-## Wrap Up
+## Wrap up
 
 Our basic project is now setup and we can now begin learning about the HTML Canvas element, and how we can use this element with JavaScript to create games! Your project should look like the following:
 
