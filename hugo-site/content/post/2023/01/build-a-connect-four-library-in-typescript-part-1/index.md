@@ -27,7 +27,7 @@ In order to follow along with this series, you will need the following:
 
 ## Series Code
 
-You can find the code for the basic project setup here on GitHub: TODO add link.
+You can find the code for the basic project setup here on GitHub: [Project Start](https://github.com/devshareacademy/connect-four/tree/project-start)
 
 You can find the completed source code for this article here on GitHub: TODO add link
 
@@ -79,11 +79,73 @@ The project should compile you should see a new folder called `dist`.
 
 ![Terminal output from running the build command](./images/build-a-connect-four-library-in-typescript-part-2.png)
 
+## Project Structure
+
+In the project folder, there is a variety of files and folders. At a high level, here is a quick summary of what each folder and file is used for:
+
+* .vscode - this folder contains configuration files for the VSCode editor, which will add auto linting and custom launch configurations for running tests (if you are not using VSCode, you can remove this folder from your project)
+* config - this folder contains configuration files for ESLint and TSC (the TypeScript Compiler)
+* dist - a dynamically generated folder which will contain the compiled source code of the finished library (generated when you run the build script)
+* node_modules - a dynamically generated folder which contains the project developer dependencies when working on the library (generated when you run the install script)
+* src - this folder will contain the core code for our library (currently contains a placeholder Class for the Connect Four library)
+* tests - this folder will contain the custom tests for our library
+* .gitignore - this file is used for telling [git](https://git-scm.com/) to ignore certain files in our project (mainly used for our project dependencies and dynamically generated files)
+* package.json - a configuration file for npm that contains metadata about your project
+* tsconfig.json - a configuration file for TSC
+* yarn.lock - a configuration file that contains the exact tree structure of the project dependencies and their versions (helps with repeatable project builds)
+
+For the most part, we will only be focusing on the files in the `src` and `tests` folders, which is where we will be writing our code. The other files are primarily configuration files to support using TypeScript, ESLint, and Node.js.
+
 ## Planning Our ConnectFour.ts Class
 
-TODO
+In the project `src` folder we have two files: `index.ts` and `connect-four.ts`. The `index.ts` file is going to be the main entrypoint file for our library. Its only purpose is to export out any code that we want to expose publicly in our library. The `connect-four.ts` file is going to be the main class for our library. The file is currently setup to export out a class called `ConnectFour`, and the `index.ts` file imports this class and exports the class as part of the library.
 
-## Wrap up
+Currently, the `ConnectFour` class contains no source code and just a few high level comments on some of the requirements that will be needed for our library. Before we start writing our class, lets review some of the functionality that we will need.
+
+To represent the game board of Connect Four, we can use a two dimensional array that will have the dimensions of 7 x 6. If you are not familiar with a two dimensional array, a 2D array is simply an array that contains another array. For example:
+
+```typescript
+const arr = [
+  [1,2,3]
+];
+```
+
+When we create this 2D array, we will initialize the inner arrays with `0`, which will represent an empty cell. To represent the players game pieces, we can use the values `1` and `2` to represent each player.
+
+To play the game of Connect Four, players can do one of two things: either drop a game token into an empty column or they can start a new game by removing all of the game tokens from the board. To represent these two actions, we will add two methods to our `ConnectFour` class: `makeMove` and `resetGame`.
+
+Finally, for our game state we will need to keep track of a few different things and expose these values as properties on our class:
+
+* the board state - needed so we can render out the current board and where the players game pieces are currently placed
+* the current players turn - needed so we can render out which player should make the next move
+* indicator if a player won the game
+* indicator if a game is over - needed in case the game ends in a draw and there is no winner
+
+Now that we have planned the initial requirements for our `ConnectFour` class, we can start writing some code!
+
+## Class Constructor and Private Properties
+
+To get started, the first thing we will do is add the properties we discussed above to our `ConnectFour` class. To do this, replace the code in the `connect-four.ts` file with the following:
+
+```typescript
+export enum Player {
+  ONE = 'ONE',
+  TWO = 'TWO',
+}
+
+export type CellRange = 0 | 1 | 2;
+
+export default class ConnectFour {
+  #board: CellRange[][] = [];
+  #playersTurn: Player = Player.ONE;
+  #isGameOver = false;
+  #gameWinner: undefined | Player;
+
+  constructor() {}
+}
+```
+
+## Wrap Up
 
 In this article, we learned about the basics of working with the HTML Canvas element and we saw how we can use the Canvas Context element to interact and draw on the HTML Canvas element.
 
