@@ -15,6 +15,7 @@ categories: [
 ]
 desc: In this part of the series, we review the basics of working with and drawing on the HTML Canvas element. Learn to create a reusable Connect Four library in TypeScript! This reusable library can be used to build any number of implementations of a Connect Four game - both for the web and CLI.
 draft: false
+thumbnail: "/post/2023/01/build-a-connect-four-library-in-typescript-part-1//images/build-a-connect-four-library-in-typescript-thumbnail.png"
 ---
 
 In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web. We will not be going over the basics of TypeScript, however you should be able to follow along if you are not familiar with TypeScript.
