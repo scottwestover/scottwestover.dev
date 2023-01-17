@@ -15,16 +15,21 @@ categories: [
 ]
 desc: Learn to create a reusable Connect Four library in TypeScript! This reusable library can be used to build any number of implementations of a Connect Four game - both for the web and CLI.
 draft: false
-thumbnail: "/post/2023/01/build-a-connect-four-library-in-typescript-part-1/images/build-a-connect-four-library-in-typescript-thumbnail.png"
+thumbnail: "/post/2023/01/build-a-connect-four-library-in-typescript-part-1/images/build-a-connect-four-library-in-typescript-part-1-thumbnail.png"
+toc: true
 ---
 
-In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web. We will not be going over the basics of TypeScript, however you should be able to follow along if you are not familiar with TypeScript.
+In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web.
+
+In part 1 of this series, we are going to review the rules and game play of the game Connect Four and we will start to build out the initial `ConnectFour` class by adding the properties and methods that will be needed.
 
 In order to follow along with this series, you will need the following:
 
 * Access to a development environment that has [Node.js 16](https://nodejs.org/en/) installed.
 * A code editor of your choice: Sublime, VSCode, Notepad, etc.
 * Some familiarity with JavaScript. We will not be going over the basics of JavaScript in this series, but you should be able to still follow along.
+
+We will not be going over the basics of TypeScript, however you should be able to follow along if you are not familiar with TypeScript.
 
 ## Series Code
 
@@ -40,7 +45,7 @@ Before we start writing any code, we will do a quick review of the game Connect 
 
 To play the game, you drop one of your tokens into one of the columns at the top of the vertical grid, which will result in the token falling into the next open space in that column. Finally if the game board fills up, and no player managed to connect four tokens of their color, the game ends in a draw.
 
-![Basic Connect Four game play](./images/build-a-connect-four-library-in-typescript-part-3.gif)
+![Basic Connect Four game play](./images/build-a-connect-four-library-in-typescript-part-1-3.gif)
 
 ## Getting Started
 
@@ -64,7 +69,7 @@ yarn install --frozen-lockfile
 
 Once the project dependencies are installed, you should see a project structure like this:
 
-![Basic project structure](./images/build-a-connect-four-library-in-typescript-part-1.png)
+![Basic project structure](./images/build-a-connect-four-library-in-typescript-part-1-1.png)
 
 Finally, to make sure everything is working properly, if you run one of the following commands:
 
@@ -78,7 +83,7 @@ yarn build
 
 The project should compile and you should see a new folder called `dist`, which will have all of the compiled source code.
 
-![Terminal output from running the build command](./images/build-a-connect-four-library-in-typescript-part-2.png)
+![Terminal output from running the build command](./images/build-a-connect-four-library-in-typescript-part-1-2.png)
 
 ## Project Structure
 
@@ -219,8 +224,10 @@ In the code above, we added two public methods to our class: `makeMove` and `res
 
 ## Wrap Up
 
-In this article, we reviewed the rules and game play of the game Connect Four and we started to build out the initial `ConnectFour` class  by adding the properties and methods that will be needed.
+In this article, we reviewed the rules and game play of the game Connect Four and we started to build out the initial `ConnectFour` class by adding the properties and methods that will be needed.
 
-You can find the completed source code for this article here on GitHub: [Blog Post 1 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-1). If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions).
+You can find the completed source code for this article here on GitHub: [Blog Post 1 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-1).
 
-In the next article of this series, we will start to add the game logic for when a players places a game piece into a column.
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions).
+
+In [part 2](/post/2023/01/build-a-connect-four-library-in-typescript-part-2/) of this series, we will start to add the game logic for when the game is initialized, add the ability to reset the game state, and look at how we can test our code.
