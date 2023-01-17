@@ -119,7 +119,7 @@ Finally, now that we have our new internal method, we can update the `resetGame`
 
 ```typescript
 public resetGame(): void {
-  this.#initializeGrid();
+  this.#initializeGame();
 }
 ```
 
