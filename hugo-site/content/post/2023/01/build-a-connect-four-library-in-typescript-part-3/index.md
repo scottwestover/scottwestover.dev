@@ -14,7 +14,7 @@ categories: [
   "Tutorial"
 ]
 desc: Learn to create a reusable Connect Four library in TypeScript! This reusable library can be used to build any number of implementations of a Connect Four game - both for the web and CLI.
-draft: true
+draft: false
 thumbnail: "/post/2023/01/build-a-connect-four-library-in-typescript-part-3/images/build-a-connect-four-library-in-typescript-part-3-thumbnail.png"
 toc: true
 ---
