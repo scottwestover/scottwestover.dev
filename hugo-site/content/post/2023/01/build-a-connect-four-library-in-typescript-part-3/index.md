@@ -1,6 +1,6 @@
 ---
 title: Build A Connect Four Library In TypeScript - Part 3
-date: 2023-01-15 06:00:02
+date: 2023-01-20 06:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -19,7 +19,7 @@ thumbnail: "/post/2023/01/build-a-connect-four-library-in-typescript-part-3/imag
 toc: true
 ---
 
-In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web.
+In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in a future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web.
 
 Previously, in [part 2](/post/2023/01/build-a-connect-four-library-in-typescript-part-2/), we added the initial game initialization logic, the ability to reset the game state, and we then learned how we could test our code using the uvu framework.
 

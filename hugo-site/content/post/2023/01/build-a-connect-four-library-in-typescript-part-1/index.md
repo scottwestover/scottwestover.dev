@@ -19,7 +19,7 @@ thumbnail: "/post/2023/01/build-a-connect-four-library-in-typescript-part-1/imag
 toc: true
 ---
 
-In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web.
+In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in a future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web.
 
 In part 1 of this series, we are going to review the rules and game play of the game Connect Four and we will start to build out the initial `ConnectFour` class by adding the properties and methods that will be needed.
 
