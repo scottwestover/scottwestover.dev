@@ -193,3 +193,17 @@ Now, lets create the new `#doAllCellsMatch` private method. In the `src/connect-
 ```
 
 In the code above, we are simply checking if all of the provided game piece values are the same, and if they match the value of the game piece that was last played. If they all match, then we update the winner of the game by setting the `#gameWinner` property on our class.
+
+### Adding Vertical Win Tests
+
+## Checking For A Horizontal Win
+
+## Checking For A Diagonal Forward Slash Win
+
+## Checking For A Diagonal Backward Slash Win
+
+## Returning The Winning Cells
+
+## Code Cleanup
+
+Move the types into a new file...
