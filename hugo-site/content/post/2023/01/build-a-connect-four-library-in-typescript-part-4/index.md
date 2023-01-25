@@ -194,9 +194,75 @@ Now, lets create the new `#doAllCellsMatch` private method. In the `src/connect-
 
 In the code above, we are simply checking if all of the provided game piece values are the same, and if they match the value of the game piece that was last played. If they all match, then we update the winner of the game by setting the `#gameWinner` property on our class.
 
-### Adding Vertical Win Tests
-
 ## Checking For A Horizontal Win
+
+To check for a win in a row, we will need to take the location of where the last game piece was played and validate all of the possible winning combinations that can be made from that location. As an example, in the image below if the player places a game piece in the third column, then we would need to check the following combinations to see if there is four in a row, since they all contain the third column:
+
+* first, second, third, and fourth column
+* second, third, fourth, and firth column
+* third, fourth, fifth, and sixth column
+
+![Possible winning combinations for horizontal check](./images/build-a-connect-four-library-in-typescript-part-4-5.png)
+
+Now, to figure out which combinations we need to check, we can use the column that the game piece was dropped into as a focal point. We know that based on this position, the columns we will need to check will be within 3 columns, since we only care about four game pieces being in a row. In the example above, since we dropped the game piece into the third column, then we know that we only need to check for winning combinations that contain columns 1 - 6. If the game piece was dropped into the fourth column, then we would need to check for winning combinations that contain columns 1 - 7.
+
+To perform this check, replace all of the code in the `#isHorizontalWin` method with the following code:
+
+```typescript
+const row = lastPiecePlayedRow;
+for (let col = minCol; col <= maxCol; col++) {
+  const cells = [
+    this.#board[row][col],
+    this.#board[row][col + 1],
+    this.#board[row][col + 2],
+    this.#board[row][col + 3],
+  ];
+  const isWin = this.#doAllCellsMatch(cells, this.#board[row][col]);
+  if (isWin) {
+    return true;
+  }
+}
+return false;
+```
+
+In the code above, we are creating the possible winning combinations by starting at the `minCol` value that is provided as an argument to our method, and we are grabbing a reference to the next three cells. From there, we are checking to see if that combination is a winning combination by passing the values to the `#doAllCellsMatch` method we created before. If the combination is not a win, then we check the next combination, and if we don't end up finding a winning combination, then we just return `false`.
+
+Now, to find the minimum and maximum column values, we can use the `Math.min` and `Math.max` static methods. For the minimum column value, we want to take the index of the column that the game piece was placed at and subtract 3 from this value, and from there we will want to compare that value with `0`, and take the larger of the two values. The reason for this is so that we make sure our minimum column index stays within the bounds of our game board. As an example, if we place a game piece in the 2nd column, which would be index `1` in our board, then we know that minimum column index that we would check would be `0`, since that is the first column in the board.
+
+To find the maximum column value, we will want to take the index of the column that the last game piece was placed and add 3 to this value, and from there we will want to compare this value with our maximum column index, and take the smaller of the two values. This will ensure our column checks will stay within the bounds of our game board.
+
+In order to find these two values, we will create two utility functions that will calculate these values. To do this, create a new file in the `src` folder called `utils.ts` and add the following code to the file:
+
+```typescript
+export function min(num: number): number {
+  return Math.max(num - 3, 0);
+}
+
+export function max(num: number, max: number): number {
+  return Math.min(num + 3, max);
+}
+```
+
+Then, in the `src/connect-four.ts` file, add the following code to the top of the `#checkForGameEnd` method:
+
+```typescript
+const minCol = min(col);
+const maxCol = max(col, NUMBER_OF_COLS - 1);
+```
+
+Finally, we just need to pass these values to our `#isHorizontalWin` method. To do this, replace the following code:
+
+```typescript
+#this.#isHorizontalWin(row, 0, 0)
+```
+
+with:
+
+```typescript
+#this.#isHorizontalWin(row, minCol, maxCol)
+```
+
+With that final change, we have the logic in place for checking for a horizontal win. We will now discuss how we can check for our diagonal wins.
 
 ## Checking For A Diagonal Forward Slash Win
 
