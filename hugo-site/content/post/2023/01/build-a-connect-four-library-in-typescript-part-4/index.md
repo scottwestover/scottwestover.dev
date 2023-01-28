@@ -266,7 +266,121 @@ With that final change, we have the logic in place for checking for a horizontal
 
 ## Checking For A Diagonal Forward Slash Win
 
+Similar to the logic for checking for a horizontal win, we will need to check all of the possible winning combinations that include the location where our game piece landed, and we will do this by using the position of our last placed game piece as a focal point. From this focal point, we know that the positions that we need to check will be within 3 columns and 3 rows of this focal point.
+
+As an example, in the image below, if we placed a game piece in the 3rd column and it landed in the 2nd from the bottom row, then we would need to check two combinations.
+
+![Possible winning combinations for diagonal check](./images/build-a-connect-four-library-in-typescript-part-4-6.png)
+
+Now, to figure out which combinations we need to check, we need to start at the location of where the game piece was placed and count up to 3 spaces away by moving 1 column to the left and 1 column down at a time. The location we land in will be the starting location of the combinations we need to check.
+
+![Finding winning combinations for diagonal check](./images/build-a-connect-four-library-in-typescript-part-4-7.png)
+
+We will start from this location and compare that value with the next three cells in that diagonal. If that combination is not a win, then we will move up to the next possible cell and do the same check, and we will continue to do this until we get back to the cell that game piece was placed in, or if we get to a point where we will not have four cells in a sequence because we are too close to the edge of the game board.
+
+![Checking for wins in a diagonal sequence](./images/build-a-connect-four-library-in-typescript-part-4-8.png)
+
+Now, in order to figure out how far away the starting location is, we need to know how far away the current game pieces location is from the edge of the game board. As an example, in the image below we can see that from our game pieces location we are 2 columns from the left edge of the board and only 1 row from the bottom edge of the board. Due to this, our starting location for our combination check can be at max 1 location away.
+
+![Possible winning combinations for diagonal check](./images/build-a-connect-four-library-in-typescript-part-4-6.png)
+
+Before we start adding our game logic to perform what we described above, we are going to maximum row value that will be used for checking the possible winning combinations. To find this value, we will take the index of the row of where our game piece was placed and add 3 to that value, and from there we will want to compare this value with our maximum row index, and take the smaller of the two values. This will be similar to what we did to find the maximum column value before. To do this in our code, we will want to update our `#checkForGameEnd` method to match the following code:
+
+```typescript
+const minCol = min(col);
+const maxCol = max(col, NUMBER_OF_COLS - 1);
+const maxRow = max(row, NUMBER_OF_ROWS - 1);
+
+// see if a player won based off of last piece that placed
+const didPlayerWin =
+  this.#isHorizontalWin(row, minCol, maxCol) ||
+  this.#isVerticalWin(row, col) ||
+  this.#isForwardSlashWin(row, col, minCol, maxRow) ||
+  this.#isBackwardSlashWin(row, col, maxCol, maxRow);
+```
+
+In the code above, we added the new `maxRow` variable that determines the maximum row value that can be used for our possible winning combination checks. Besides this, we also updated the `#isForwardSlashWin` and `#isBackwardSlashWin` method calls to use the proper arguments based on the `minCol`, `maxCol`, and `maxRow` values.
+
+Finally, we can update the `#isForwardSlashWin` method to have the following code:
+
+```typescript
+//  need to determine a new max and min based on the diagonal
+let maxDiagonalSpaces = Math.min(col - minCol, maxRow - row);
+while (maxDiagonalSpaces >= 0) {
+  const tempCol = col - maxDiagonalSpaces;
+  const tempRow = row + maxDiagonalSpaces;
+  if (tempRow > 2 && tempCol <= 3) {
+    const cells = [
+      this.#board[tempRow][tempCol],
+      this.#board[tempRow - 1][tempCol + 1],
+      this.#board[tempRow - 2][tempCol + 2],
+      this.#board[tempRow - 3][tempCol + 3],
+    ];
+    const isWin = this.#doAllCellsMatch(cells, this.#board[row][col]);
+    if (isWin) {
+      return true;
+    }
+  }
+  maxDiagonalSpaces--;
+}
+return false;
+```
+
+In the code above, we are doing the following:
+
+* First, we are calculating the furthest number of spaces away we can use for determining the possible winning combinations, and we are storing that value in a variable called `maxDiagonalSpaces`. To find this value, we are taking our maximum row and minium column values and we are comparing those values to the row and column of the game piece that was placed to find how far away from the game board we are. We then take the minimum of these two values since this will limit the number of spaces we can check.
+* Once we have this value, we then use that value to determine our start location for the possible winning combination check by taking our current column index and subtracting that value from it, that way we are moving to the left. We then take the current row index and add that value to it to determine how far down we need to move in our board.
+* With both of these values, we then grab a reference to that cell and compare that value with the next 3 cells in the diagonal row. If all of the cells match, then we have a win and we can return `true` early. Otherwise, we subtract 1 from `maxDiagonalSpaces` variable and check the next possible winning combination.
+* Finally, we return `false` if we do not find any winning combinations.
+
 ## Checking For A Diagonal Backward Slash Win
+
+The last game logic we need to add for checking for a win is the logic for checking for a diagonal win in the other direction. For the most part, this logic is very similar to the logic we added for the forward slash diagonal win check.
+
+![Possible winning combinations for backward diagonal slash](./images/build-a-connect-four-library-in-typescript-part-4-9.png)
+
+The main difference is when we go to find the starting location for our checks, we move to the right. As an example, in the image below if we placed our game piece in the 4th column and it landed in the 3rd row from the top, we would move 1 column to the right and 1 row down, and do this 3 times.
+
+![Finding winning combinations for backward diagonal check](./images/build-a-connect-four-library-in-typescript-part-4-10.png)
+
+This would result in our starting location for our winning combination check. We would then just iterate through the sequences until we are back at the original row and column indexes, or until we no longer have a sequence of four if we ware to close to the game board edge.
+
+![Checking for wins in a backward diagonal sequence](./images/build-a-connect-four-library-in-typescript-part-4-11.png)
+
+To perform this check, add the following code to the `#isBackwardSlashWin` method:
+
+```typescript
+//  need to determine a new max and min based on the diagonal
+let maxDiagonalSpaces = Math.min(maxCol - col, maxRow - row);
+while (maxDiagonalSpaces >= 0) {
+  const tempCol = col + maxDiagonalSpaces;
+  const tempRow = row + maxDiagonalSpaces;
+
+  if (tempRow > 2 && tempCol >= 3) {
+    const cells = [
+      this.#board[tempRow][tempCol],
+      this.#board[tempRow - 1][tempCol - 1],
+      this.#board[tempRow - 2][tempCol - 2],
+      this.#board[tempRow - 3][tempCol - 3],
+    ];
+    const isWin = this.#doAllCellsMatch(cells, this.#board[row][col]);
+    if (isWin) {
+      return true;
+    }
+  }
+  maxDiagonalSpaces--;
+}
+return false;
+```
+
+This code is very similar to the code we added in the `#isForwardSlashWin` method. A few of the differences are:
+
+* When we are finding the `maxDiagonalSpaces`, we are using the maximum column index since we need to know how far we are from the right side of the board.
+* When we are finding the four cells that make up a combination, we are moving towards the upper left hand corner of the game board, which is why we are subtracting values from our `tempRow` and `tempCol` indexes.
+
+With this game logic in place, we now have all of the logic for checking if a player won in place! If you save your game and run the tests, everything should be still passing. We will now add some new tests to our `tests/connect-four.ts` file to validate all of the logic that we have added.
+
+## Updated Test
 
 ## Returning The Winning Cells
 
