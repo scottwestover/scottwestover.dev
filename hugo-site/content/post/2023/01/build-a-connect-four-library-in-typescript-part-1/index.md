@@ -228,6 +228,6 @@ In this article, we reviewed the rules and game play of the game Connect Four an
 
 You can find the completed source code for this article here on GitHub: [Blog Post 1 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-1).
 
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions).
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
 
 In [part 2](/post/2023/01/build-a-connect-four-library-in-typescript-part-2/) of this series, we will start to add the game logic for when the game is initialized, add the ability to reset the game state, and look at how we can test our code.
