@@ -291,6 +291,6 @@ In this article, we reviewed the rules and game play of the game Connect Four an
 
 You can find the completed source code for this article here on GitHub: [Blog Post 2 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-2).
 
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions).
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
 
-In the next article of this series, we start adding in the logic for allowing players to drop a game piece into a column.
+In the next article of this series, we will start adding in the logic for allowing players to drop a game piece into a column.

@@ -391,6 +391,6 @@ In this article, we added the logic for allowing the player to place a game piec
 
 You can find the completed source code for this article here on GitHub: [Blog Post 3 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-3).
 
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions).
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
 
-In the next article of this series, we add the logic for checking if a player has won the game by getting a Connect Four.
+In the next article of this series, we will add the logic for checking if a player has won the game by getting a Connect Four.
