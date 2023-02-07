@@ -5,13 +5,15 @@ tags: [
   "HTML5",
   "Game Development",
   "TypeScript",
-  "Tutorial"
+  "Tutorial",
+  "Connect Four
 ]
 categories: [
   "HTML5",
   "Game Development",
   "TypeScript",
-  "Tutorial"
+  "Tutorial",
+  "Connect Four"
 ]
 desc: Learn to create a reusable Connect Four library in TypeScript! This reusable library can be used to build any number of implementations of a Connect Four game - both for the web and CLI.
 draft: false
