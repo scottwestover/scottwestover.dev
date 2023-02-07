@@ -6,7 +6,7 @@ tags: [
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Connect Four
+  "Connect Four"
 ]
 categories: [
   "HTML5",
