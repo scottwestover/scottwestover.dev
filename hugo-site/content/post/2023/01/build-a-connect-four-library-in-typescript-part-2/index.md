@@ -295,4 +295,4 @@ You can find the completed source code for this article here on GitHub: [Blog Po
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
 
-In the next article of this series, we will start adding in the logic for allowing players to drop a game piece into a column.
+In [part 3](/post/2023/01/build-a-connect-four-library-in-typescript-part-3/) of this series, we will start adding in the logic for allowing players to drop a game piece into a column.

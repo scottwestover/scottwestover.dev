@@ -395,4 +395,4 @@ You can find the completed source code for this article here on GitHub: [Blog Po
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
 
-In the next article of this series, we will add the logic for checking if a player has won the game by getting a Connect Four.
+In [part 4](/post/2023/02/build-a-connect-four-library-in-typescript-part-4/) of this series, we will add the logic for checking if a player has won the game by getting a Connect Four.

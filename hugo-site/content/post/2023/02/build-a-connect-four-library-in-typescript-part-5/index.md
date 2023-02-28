@@ -23,7 +23,7 @@ toc: true
 
 In this series, we will go over how to create a reusable TypeScript class that can be used to build the game Connect Four, and in a future series we will see how we can use this library to create implementations of the Connect Four game for the CLI and the web.
 
-Previously, in [part 4](/post/2023/01/build-a-connect-four-library-in-typescript-part-4/), we finished updating the logic for checking if a player won the game by getting a Connect Four.
+Previously, in [part 4](/post/2023/02/build-a-connect-four-library-in-typescript-part-4/), we finished updating the logic for checking if a player won the game by getting a Connect Four.
 
 In this part of the series, we are going to work on updating our game logic to return the winning game cells, and we will do some code refactoring by moving our type definitions to a new file.
 

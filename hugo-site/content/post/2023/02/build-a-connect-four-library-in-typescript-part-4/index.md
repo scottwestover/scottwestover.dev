@@ -1462,4 +1462,4 @@ You can find the completed source code for this article here on GitHub: [Blog Po
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
 
-In the next article of this series, we will update our game logic to allow us to return the winning game cells and we will do some code refactoring by moving our type definitions to a new file.
+In [final part](/post/2023/02/build-a-connect-four-library-in-typescript-part-5/) of this series, we will update our game logic to allow us to return the winning game cells and we will do some code refactoring by moving our type definitions to a new file.
