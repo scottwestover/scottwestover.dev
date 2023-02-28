@@ -28,6 +28,6 @@ If you are interested in learning how to create a reusable Connect Four library 
 </div>
 <br />
 
-If you prefer a written tutorial, then you can find the same content here on my blog: [part 1](/post/2023/01/build-a-connect-four-library-in-typescript-part-1/).
+If you prefer a written tutorial, then you can find the same content here on my blog: [Build A Connect Four Library In TypeScript - Part 1](/post/2023/01/build-a-connect-four-library-in-typescript-part-1/).
 
 I hope you enjoy the new content! Please feel free to post any questions or comments below.
