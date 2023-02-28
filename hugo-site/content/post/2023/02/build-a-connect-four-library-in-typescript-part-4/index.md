@@ -27,6 +27,16 @@ Previously, in [part 3](/post/2023/01/build-a-connect-four-library-in-typescript
 
 In this part of the series, we are going to work on adding in the logic for checking if a player has won by getting a Connect Four.
 
+## Series Links
+
+You can find links to all of the posts in this series here:
+
+* [Part 1](/post/2023/01/build-a-connect-four-library-in-typescript-part-1/)
+* [Part 2](/post/2023/01/build-a-connect-four-library-in-typescript-part-2/)
+* [Part 3](/post/2023/01/build-a-connect-four-library-in-typescript-part-3/)
+* [Part 4](/post/2023/02/build-a-connect-four-library-in-typescript-part-4/)
+* [Part 5](/post/2023/02/build-a-connect-four-library-in-typescript-part-5/)
+
 ## Series Code
 
 You can find the code for the end of part 3 here: [Blog Post 3 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-3)

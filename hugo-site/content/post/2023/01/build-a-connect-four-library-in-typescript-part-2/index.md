@@ -27,6 +27,16 @@ Previously, in [part 1](/post/2023/01/build-a-connect-four-library-in-typescript
 
 In part 2 of this series, we are going to add the game initialization logic, the ability to reset the game state, and then take a look at how we can test our code using the [uvu](https://github.com/lukeed/uvu) framework.
 
+## Series Links
+
+You can find links to all of the posts in this series here:
+
+* [Part 1](/post/2023/01/build-a-connect-four-library-in-typescript-part-1/)
+* [Part 2](/post/2023/01/build-a-connect-four-library-in-typescript-part-2/)
+* [Part 3](/post/2023/01/build-a-connect-four-library-in-typescript-part-3/)
+* [Part 4](/post/2023/02/build-a-connect-four-library-in-typescript-part-4/)
+* [Part 5](/post/2023/02/build-a-connect-four-library-in-typescript-part-5/)
+
 ## Series Code
 
 You can find the code for the end of part 1 here: [Blog Post 1 Code](https://github.com/devshareacademy/connect-four/tree/blog-post-1)
