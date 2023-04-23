@@ -21,7 +21,7 @@ thumbnail: "/post/2023/04/build-a-connect-four-library-in-typescript-part-3-vide
 toc: false
 ---
 
-If you are interested in learning how to create a reusable Connect Four library in TypeScript, then you should check out the third video in my new series that I released on YouTube: <a href="https://youtu.be/pFpJywqZNEE" target="_blank">Building a Connect Four Library in TypeScript - Step by Step Guide - Part 2</a>.
+If you are interested in learning how to create a reusable Connect Four library in TypeScript, then you should check out the third video in my new series that I released on YouTube: <a href="https://youtu.be/pFpJywqZNEE" target="_blank">Building a Connect Four Library in TypeScript - Step by Step Guide - Part 3</a>.
 
 <div style="text-align: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pFpJywqZNEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
