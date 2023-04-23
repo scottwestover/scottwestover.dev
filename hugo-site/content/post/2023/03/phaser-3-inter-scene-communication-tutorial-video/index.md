@@ -17,7 +17,7 @@ categories: [
 ]
 desc: Learn how you can easily communicate between Scenes in Phaser 3 by using the Phaser 3 EventEmitter!
 draft: false
-thumbnail: "/post/2023/03/phaser-3-inter-scene-communication-tutorial-video/images/phaser-3-inter-scene-communication-tutorial-video.png"
+thumbnail: "/post/2023/03/phaser-3-inter-scene-communication-tutorial-video/images/phaser-3-inter-scene-communication-tutorial-video-thumbnail.png"
 toc: false
 ---
 
