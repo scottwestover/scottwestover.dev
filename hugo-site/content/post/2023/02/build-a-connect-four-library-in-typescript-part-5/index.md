@@ -155,9 +155,9 @@ Next, in the `#isVerticalWin` method, add the following code above the `return` 
 if (isWin) {
   this.#winningCells = [
     { col, row },
-    { col: col + 1, row },
-    { col: col + 2, row },
-    { col: col + 3, row },
+    { col, row + 1 },
+    { col, row + 2 },
+    { col, row + 3 },
   ];
   return true;
 }
@@ -199,9 +199,9 @@ with the following code:
 if (isWin) {
   this.#winningCells = [
     { col: tempCol, row: tempRow },
-    { col: tempCol + 1, row: tempRow - 1 },
-    { col: tempCol + 2, row: tempRow - 2 },
-    { col: tempCol + 3, row: tempRow - 3 },
+    { col: tempCol - 1, row: tempRow - 1 },
+    { col: tempCol - 2, row: tempRow - 2 },
+    { col: tempCol - 3, row: tempRow - 3 },
   ];
   return true;
 }
