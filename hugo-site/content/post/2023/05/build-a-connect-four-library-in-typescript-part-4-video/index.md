@@ -1,6 +1,6 @@
 ---
 title: Build A Connect Four Library In TypeScript - Part 4 (Video)
-date: 2023-04-10 06:00:02
+date: 2023-05-04 16:00:02
 tags: [
   "HTML5",
   "Game Development",
