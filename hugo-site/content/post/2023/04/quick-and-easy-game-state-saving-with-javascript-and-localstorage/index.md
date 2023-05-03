@@ -16,7 +16,7 @@ categories: [
   "Local Storage"
 ]
 desc: In this video, we'll show you how to use JavaScript and browser local storage to easily and quickly save your game state.
-draft: true
+draft: false
 thumbnail: "/post/2023/04/quick-and-easy-game-state-saving-with-javascript-and-localstorage/images/quick-and-easy-game-state-saving-with-javascript-and-localstorage-thumbnail.png"
 toc: false
 ---
