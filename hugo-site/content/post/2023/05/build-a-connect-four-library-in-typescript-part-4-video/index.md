@@ -26,7 +26,7 @@ toc: false
 If you are interested in learning how to create a reusable Connect Four library in TypeScript, then you should check out the fourth video in my new series that I released on YouTube: <a href="https://youtu.be/JmkP-n17ReE" target="_blank">Building a Connect Four Library in TypeScript - Step by Step Guide - Part 4</a>.
 
 <div style="text-align: center;">
-<iframe width="560" height="315" src="https://youtu.be/JmkP-n17ReE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JmkP-n17ReE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <br />
 

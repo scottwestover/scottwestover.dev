@@ -28,7 +28,7 @@ toc: false
 If you are interested in learning how to implement simple dependency injection in Phaser 3, you should check out this new video that I released on YouTube: <a href="https://youtu.be/yqP94VOT3Bk" target="_blank">Effortless Phaser 3 Development with Simple Dependency Injection</a>.
 
 <div style="text-align: center;">
-<iframe width="560" height="315" src="https://youtu.be/yqP94VOT3Bk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yqP94VOT3Bk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <br />
 
