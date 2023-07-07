@@ -6,14 +6,16 @@ tags: [
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Phaser 3"
+  "Phaser 3",
+  "Video"
 ]
 categories: [
   "HTML5",
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Phaser 3"
+  "Phaser 3",
+  "Video"
 ]
 desc: Learn how to create a simple health bar in Phaser 3 to look like the health bars from games like the Legend of Zelda!
 draft: false

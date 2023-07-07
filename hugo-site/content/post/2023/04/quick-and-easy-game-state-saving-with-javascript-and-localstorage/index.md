@@ -6,14 +6,16 @@ tags: [
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Local Storage"
+  "Local Storage",
+  "Video"
 ]
 categories: [
   "HTML5",
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Local Storage"
+  "Local Storage",
+  "Video"
 ]
 desc: In this video, we'll show you how to use JavaScript and browser local storage to easily and quickly save your game state.
 draft: false

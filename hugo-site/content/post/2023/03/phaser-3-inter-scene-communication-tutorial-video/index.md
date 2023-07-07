@@ -6,14 +6,16 @@ tags: [
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Phaser 3"
+  "Phaser 3",
+  "Video"
 ]
 categories: [
   "HTML5",
   "Game Development",
   "TypeScript",
   "Tutorial",
-  "Phaser 3"
+  "Phaser 3",
+  "Video"
 ]
 desc: Learn how you can easily communicate between Scenes in Phaser 3 by using the Phaser 3 EventEmitter!
 draft: false
