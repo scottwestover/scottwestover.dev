@@ -31,9 +31,9 @@ Note: there are a variety of Solitaire type games, and these type of games are g
 
 ## Tutorial Overview
 
-In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s a screen shot of what the final game should look like:
+In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-TODO
+![Phaser Solitaire Gameplay](../../../../../static/img/phaser-3-solitaire-tutorial/gameplay.gif)
 
 The main steps for this tutorials series includes:
 
@@ -89,7 +89,7 @@ Before we start adding any code, we will need to setup our project, install the 
 
 In order to follow along with this tutorial, you will need to download the initial project files that will be used. The initial project files include all of the assets that will be used in the game, the initial project structure for our Phaser 3 game, and the required files for install the project dependencies.
 
-You can find the initial project files here on GitHub: [TODO add link]("TODO"). Click [here]("TODO") to download the files.
+You can find the initial project files here on GitHub: [Solitaire Project Files](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/releases/tag/solitaire_initial_project). Click [Direct Download](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/archive/refs/tags/solitaire_initial_project.zip) to download the files.
 
 You will find the following files in the zip file:
 
@@ -224,16 +224,12 @@ If we change the value of `setOrigin` to be `0.5`, or remove this call, then thi
 
 In the image above, our card is now cut off. This is due to the origin now being in the center of our Image Game Object, and so when Phaser positions the game object at `(0,0)`, the framework will make sure that the game object is positioned in our Scene so the origin lines up with that position.
 
-
-TODO Add more????
-
-
 ## Summary
 
-In this article, we reviewed the rules and game play of the game Solitaire and we setup our initial project structure and loading in the assets we will need for our game. Lastly, we reviewed some of the key concepts of Phaser 3.
+All right, with those last changes, that brings an end to this part of the tutorial. In this part of the tutorial, we reviewed the rules and game play of the game Solitaire and we setup our initial project structure and loading in the assets we will need for our game. Lastly, we reviewed some of the key concepts of Phaser 3.
 
-You can find the completed source code for this article here on GitHub: TODO
+You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/tree/load_assets)
 
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/connect-four/discussions), or leave a comment down below.
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-In [part 2](/post/2023/01/build-a-connect-four-library-in-typescript-part-2/) of this series, we will start to add the game logic for when the game is initialized, add the ability to reset the game state, and look at how we can test our code.
+In [part 2](/post/2024/08/solitaire-phaser-3-tutorial-2/) of this series, we will start to build the layout for our game.
