@@ -20,7 +20,7 @@ categories: [
   "Phaser3"
 ]
 desc: Learn how to create the classic game Solitaire in TypeScript with the amazing Phaser 3 framework!
-draft: false
+draft: true
 thumbnail: "/post/2024/08/solitaire-phaser-3-tutorial-3/images/solitaire-phaser-3-tutorial-3-thumbnail.png"
 toc: false
 ---
