@@ -27,7 +27,7 @@ toc: false
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-![Phaser Solitaire Gameplay](../../../../../static/img/phaser-3-solitaire-tutorial/gameplay.gif)
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
 
 Previously, in [part 3](/post/2024/08/solitaire-phaser-3-tutorial-3/), we focused on adding support for player input by listening for click and drag events in our game.
 

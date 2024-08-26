@@ -27,7 +27,7 @@ toc: false
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-![Phaser Solitaire Gameplay](../../../../../static/img/phaser-3-solitaire-tutorial/gameplay.gif)
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
 
 Previously, in [part 1](/post/2024/08/solitaire-phaser-3-tutorial-1/), we reviewed the rules and game play of the game Solitaire, setup our project files, and loaded in the assets we will need for our game.
 

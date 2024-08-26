@@ -27,7 +27,7 @@ toc: false
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-![Phaser Solitaire Gameplay](../../../../../static/img/phaser-3-solitaire-tutorial/gameplay.gif)
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
 
 Previously, in [part 4](/post/2024/08/solitaire-phaser-3-tutorial-4/), we focused on adding support for moving cards between the various card piles in our game, and we started to stub out the `Solitaire` class that will have the core logic for our Solitaire game.
 

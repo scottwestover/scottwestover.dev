@@ -1,6 +1,6 @@
 ---
 title: "Solitaire HTML5 Game Tutorial With Phaser 3 Part 1: Project Setup"
-date: 2023-05-04 16:00:02
+date: 2024-08-26 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -20,25 +20,29 @@ categories: [
   "Phaser3"
 ]
 desc: Learn how to create the classic game Solitaire in TypeScript with the amazing Phaser 3 framework!
-draft: true
+draft: false
 thumbnail: "/post/2024/08/solitaire-phaser-3-tutorial-1/images/solitaire-phaser-3-tutorial-1-thumbnail.png"
 toc: false
 ---
 
 The game of Solitaire is a fun classic single player card game that involves strategy, patience, and sometimes a bit of luck. The card game involves arranging cards in a specific order based on suit and rank, and the goal is to move all the cards from the tableau (the main playing area) into a set of foundations (four piles), each starting with an Ace and building up in ascending order to a King.
 
-Note: there are a variety of Solitaire type games, and these type of games are generally played with one or more standard 52 card packs. For this tutorial, we will be focusing on one instance of the game Solitaire that used a single deck of 52 cards.
+**Note:** there are a variety of Solitaire type games, and these type of games are generally played with one or more standard 52 card packs. For this tutorial, we will be focusing on one instance of the game Solitaire that used a single deck of 52 cards.
 
 ## Tutorial Overview
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-![Phaser Solitaire Gameplay](../../../../../static/img/phaser-3-solitaire-tutorial/gameplay.gif)
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
 
 The main steps for this tutorials series includes:
 
-1. Project Setup
-2. add detail
+1. [Project Setup](/post/2024/08/solitaire-phaser-3-tutorial-1/)
+2. [Game Layout](/post/2024/08/solitaire-phaser-3-tutorial-1/)
+3. [Player Input](/post/2024/08/solitaire-phaser-3-tutorial-1/)
+4. [Moving Cards](/post/2024/08/solitaire-phaser-3-tutorial-1/)
+5. [Core Solitaire Logic](/post/2024/08/solitaire-phaser-3-tutorial-1/)
+6. [Title Scene](/post/2024/08/solitaire-phaser-3-tutorial-1/)
 
 ## Game Mechanics & Rules
 
@@ -73,9 +77,10 @@ In order to create the game Solitaire with the Phaser 3 framework, I had to use 
 
 While building the game of Solitaire, you will get to see how we can use the following features of Phaser 3 to create our game:
 
-* Using the Zone game object for creating a drop zone for cards
+* Using the Zone game object for handling player interaction events
 * Using drag events on game objects to move objects in the scene
-* Using built in methods for checking for game object overlaps without physics
+* Using the Drop Zones for checking when game objects are dropped on Zones
+* Using drop events on game objects to handle object overlaps without physics
 * Using the data manager for storing and retrieving data on the game objects
 * Using containers for grouping and positioning game objects
 * Using built in scene transitions
