@@ -33,7 +33,7 @@ The game of Solitaire is a fun classic single player card game that involves str
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay" style="margin-bottom: 10px;">
 
 The main steps for this tutorials series includes:
 

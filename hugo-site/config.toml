@@ -49,7 +49,7 @@ theme = "Mainroad"
 [Params.widgets.social]
   # Enable parts of social widget
   # facebook = "username"
-  twitter = "swestover06"
+  twitter = "_scottwestover"
   linkedin = "scott-westover-77393a97"
   # telegram = "username"
   github = "scottwestover"

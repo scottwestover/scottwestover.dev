@@ -27,7 +27,7 @@ toc: false
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay" style="margin-bottom: 10px;">
 
 Previously, in [part 5](/post/2024/08/solitaire-phaser-3-tutorial-5/), we focused on adding in the core logic for the `Solitaire` class and we connected this logic to our `GameScene` to finish creating the Solitaire game instance.
 
@@ -57,7 +57,7 @@ If you save your code changes and view the game in the browser, you should see t
 
 ![Title scene images](./images/solitaire-phaser-3-tutorial-6-1.png)
 
-To make the title scene a little less static, we can add a simple animation to have the `click to start` image flash slowly. To create simple animations like this, we can create what is called a Tween in Phaser. A Tween in Phaser allows you manipulate properties on your game object to be any value, based on a duration and a type of ease, and these are created via the Tween Manager in Phaser. One example is if we wanted to animate a game object across our Scene in Phaser, we could use a Tween in Phaser to update the `x` value on game object, and we could control this animation by setting things like a `duration` (how long the animation will last), `delay` (how long to wait before the animation starts), and many more properties.
+To make the title scene a little less static, we can add a simple animation to have the `click to start` image flash slowly. To create simple animations like this, we can create what is called a Tween in Phaser. A Tween in Phaser allows you manipulate properties on your game object to be any value, based on a duration and a type of ease, and Tweens are created via the Tween Manager in Phaser. One example is if we wanted to animate a game object across our Scene in Phaser, we could use a Tween in Phaser to update the `x` value on game object, and we could control this animation by setting things like a `duration` (how long the animation will last), `delay` (how long to wait before the animation starts), and many more properties.
 
 To do this, add the following code to the bottom of the `create` method:
 
@@ -97,7 +97,7 @@ this.input.once(Phaser.Input.Events.POINTER_DOWN, () => {
 
 In the code above, we are registering an event listener on the Scene Input Plugin Manager for the `pointerdown` event, and when this event triggered we now start the `GameScene`. One thing that is different between this event listener and the other event listeners we have used, is that we are using the `once` method to register the event listener. The `once` method allows us to register a one time event listener, which will only trigger one time in our game. This is useful for when you only want to react to an event one time.
 
-If you save your code changes and view the game in the browser, now if you click anywhere on the Title Scene, this should transition the game over to the Game Scene.
+If you save your code changes and view the game in the browser, if you click anywhere on the Title Scene, this should transition the Title Scene to the Game Scene.
 
 ![Title scene animation](./images/solitaire-phaser-3-tutorial-6-3.gif)
 
@@ -133,7 +133,7 @@ In the code above, we are referencing the `main` camera in our Phaser Scene, and
 * **callback**: This callback will be invoked every frame for the duration of the effect.
   * It is sent two arguments: A reference to the camera and a progress amount between 0 and 1 indicating how complete the effect is.
 
-When we call the `fadeOut` method, we can control what call the Phaser Scene will fade to by setting the `red`, `green`, and `blue` values. In the code above, since we are setting each to `0`, this will result in our Scene fading to black.
+When we call the `fadeOut` method, we can control what call the Phaser Scene will fade to by setting the `red`, `green`, and `blue` values. In the code above, since we are setting each to `0`, this will result in our Scene fading to black. Lastly, we have a check for the `progress` value to make sure this value is set to `1` before we do the scene transition. This is important for this callback, since it will be invoked multiple times.
 
 If you save your code changes and view the game in the browser, if you click in the Scene, you should now see the fade out animation.
 

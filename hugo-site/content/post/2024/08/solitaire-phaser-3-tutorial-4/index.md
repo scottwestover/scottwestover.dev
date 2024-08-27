@@ -27,7 +27,7 @@ toc: false
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay" style="margin-bottom: 10px;">
 
 Previously, in [part 3](/post/2024/08/solitaire-phaser-3-tutorial-3/), we focused on adding support for player input by listening for click and drag events in our game.
 
@@ -213,7 +213,7 @@ this.#solitaire = new Solitaire();
 this.#solitaire.newGame();
 ```
 
-So now that we have our new `Solitaire` instance, we will start working on adding in the logic to handle when a player drops cards from the discard pile onto the foundation piles. In the `#handleMoveCardToFoundation` method, we will need to check to see if the card that was dropped came from the discard pile or from a tableau pile. To do this, we will check the data manager on the game object to see if the `pileIndex` field is set, and if so, then we know the card came from a tableau card pile. To do this, update the logic in the `#handleMoveCardToFoundation` method to be:
+So now that we have our new `Solitaire` instance, we will start working on adding in the logic to handle when a player drops cards from the discard pile onto the foundation piles. In the `#handleMoveCardToFoundation` method, we will need to check to see if the card that was dropped came from the discard pile, or from a tableau pile. To do this, we will check the data manager on the game object to see if the `pileIndex` field is set, and if so, then we know the card came from a tableau card pile. To do this, update the logic in the `#handleMoveCardToFoundation` method to be:
 
 ```typescript
 let isValidMove = false;
@@ -282,17 +282,17 @@ Then, add the following code to the `GameScene` class:
 }
 ```
 
-In the code above, we attempt to grab the `pileIndex` field from the card game objects data manager, and if this is found, we call the `moveTableauCardToFoundation` method on our Solitaire game instance. If the `pileIndex` is not found, we call the `playDiscardPileCardToFoundation` method on the Solitaire game instance. In both cases, these methods will return a `boolean` value indicating if this was a valid move. If the move is not valid, then we will return early from the method and rely on the `dragend` event listener to place the game object bask in the original position.
+In the code above, we attempt to grab the `pileIndex` field from the card game objects data manager, and if this is found, we call the `moveTableauCardToFoundation` method on our Solitaire game instance. If the `pileIndex` is not found, we call the `playDiscardPileCardToFoundation` method on the Solitaire game instance. In both cases, these methods will return a `boolean` value indicating if this was a valid move. If the move is not valid, then we will return early from the method and rely on the `dragend` event listener to place the game object back in the original position.
 
 If the move is valid, then we call the new methods that we added. For the time being, these methods will do nothing. Finally, if the card was from the `tableau` card piles, then we call the `destroy` method on the game object to remove that game object from our game. The reason we are destroying the game object is, in our foundation card piles we have 4 card game objects that are used for displaying the current card, and so we can remove the card game object that was placed up there.
 
 In the `#updateCardGameObjectsInDiscardPile` method, this logic is similar to the `pointerdown` event listener logic that we added to the draw pile. In this case, we are updating the top card to match the bottom card that was below it, and we are doing this by updating the `frame` and the `visibility` of the game object. We then update the bottom card to not be visible. For the time being, this will work, but we will need to update this later to match the state of the Solitaire game instance.
 
-Now, back in the browser if you drag cards from the tableau piles onto the foundation drop zone, those cards will be removed from the game. If you draw cards and add those cards to the foundation pile, eventually the discard pile will appear empty.
+Now, back in the browser if you drag cards from one tableau pile onto the foundation drop zone, those cards will be removed from the game. If you draw cards and add those cards to the foundation pile, eventually the discard pile will appear empty.
 
 ![Move cards to foundation pile](./images/solitaire-phaser-3-tutorial-4-3.gif)
 
-So now that we are destroying some of our card game objects, we will need to modify the logic in our `dragend` event listener to make sure the game object is still active before we attempt to modify the game object. This is needed because once we call `destroy` on the game objects, Phaser will start to cleanup these objects from our game internally and if we try to do things like update the texture, modify the data in the data manager, we will get an error. When the game object is being destroyed, Phaser will update the `active` property on the game object to be set to `false`, and so we can check for this value in our event listener. To do this, we can remove the following code from the event listener in the `#createDragEndEventListener` method:
+So now that we are destroying some of our card game objects, we will need to modify the logic in our `dragend` event listener to make sure the game object is still active before we attempt to modify the game object. This is needed because once we call `destroy` on the game objects, Phaser will start to cleanup these objects from our game internally, and if we try to do things like update the texture, or modify the data in the data manager, we will get an error. When the game object is being destroyed, Phaser will update the `active` property on the game object to be set to `false`, and so we can check for this value in our event listener. To do this, we can remove the following code from the event listener in the `#createDragEndEventListener` method:
 
 ```typescript
 // TODO: check if game object overlaps with foundation
@@ -399,12 +399,12 @@ So now that we have the base logic in place for placing cards on the foundation 
   this.#handleRevealingNewTableauCards(tableauPileIndex as number);
 ```
 
-In the code above we did logic very similar to what we did in the `#handleMoveCardToFoundation` method. First, we checked if the card that was played came from the discard pile or from another tableau pile. Based on this check, we then call the relevant method in our `Solitaire` class to make sure the move is valid, and if the move is not valid we return early. If the move is valid, then we do the following logic based on were the card, or cards came from:
+In the code above we did logic very similar to what we did in the `#handleMoveCardToFoundation` method. First, we checked if the card that was played came from the discard pile, or from another tableau pile. Based on this check, we then call the relevant method in our `Solitaire` class to make sure the move is valid, and if the move is not valid we return early. If the move is valid, then we do the following logic based on were the card, or cards came from:
 
-* If the card came from the discard pile, then we create a brand new Card Image game object and update the frame on this game object to match the card that was played. We then add this card to the target tableau card pile and position the game object to appear as bottom card on the stack. Finally, we call the method to update our cards in our discard pile to show that we played the last card.
+* If the card came from the discard pile, then we create a brand new Card Image game object and update the frame on this game object to match the card that was played. We then add this card to the target tableau card pile and position the game object to appear as the bottom card on the stack. Finally, we call the method to update our cards in our discard pile to show that we played the last card.
 * If the card came from another tableau pile, then the first thing we check to see how many cards are being moved. For each card that is being moved, we grab those Image game objects from the original `tableauContainer` the card is in and remove that game object from that container. We then add that card to the `tableauContainer` that is tied to the tableau pile we are moving the card to. Finally, we update the data in the data manager to match the new location for the card, and we call the `#handleRevealingNewTableauCards` method, which will be responsible for flipping over the next card in a tableau pile if needed.
 
-Now, back in the browser if you drag cards from the tableau piles onto another tableau pile, those cards will be moved to the other pile. If you draw cards and add those cards to a tableau pile, those cards will show up as new cards on the tableau pile and eventually the discard pile will appear empty.
+Now, back in the browser if you drag cards from one tableau pile onto another tableau pile, those cards will be moved to the other pile. If you draw cards and add those cards to a tableau pile, those cards will show up as new cards on the tableau pile and eventually the discard pile will appear empty.
 
 ![Move cards to tableau pile](./images/solitaire-phaser-3-tutorial-4-4.gif)
 

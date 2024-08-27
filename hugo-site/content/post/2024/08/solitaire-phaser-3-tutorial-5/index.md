@@ -27,11 +27,9 @@ toc: false
 
 In this tutorial series, we’ll be looking at how to recreate the game Solitaire using the Phaser 3 framework. Here’s an example of what the final game should look like:
 
-<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay">
+<img src="/img/phaser-3-solitaire-tutorial/gameplay.gif" alt="Phaser Solitaire Gameplay" style="margin-bottom: 10px;">
 
 Previously, in [part 4](/post/2024/08/solitaire-phaser-3-tutorial-4/), we focused on adding support for moving cards between the various card piles in our game, and we started to stub out the `Solitaire` class that will have the core logic for our Solitaire game.
-
-player input by listening for click and drag events in our game.
 
 In part 5 of this series, we are going to start working on building out the `Solitaire` class and adding the actual logic for our game. We will then work on connecting this logic to our Phaser game instance.
 
@@ -42,7 +40,7 @@ To get us started with building out the core game logic for our Solitaire game, 
 * There are two card colors: red and black.
 * There are four card suites: spades, clubs, diamonds, and hearts.
 * All cards that are in the hearts or diamonds suits, will be the color red.
-* All cards that are in the spades and clubs suits, will be the color black.
+* All cards that are in the spades or clubs suits, will be the color black.
 * Each suit will have 13 cards, the ace, the numbers 2 through 10, a jack, a queen, and a king.
   * To make it easier to work with the various cards, we will assign each card a value, and we will represent the card as a number 1 through 13.
   * The ace will be 1, numbers 2 through 10 will be numbers 2 through 10, the jack is 11, queen is 12, and king is 13.
@@ -121,7 +119,7 @@ For the `Card` class, we added three properties to keep track of the suit, the v
 
 Now that we have defined the object to represent our cards, the next thing we need to do is create a class to represent the full deck of cards. For our deck of cards, we will need the following functionality:
 
-* Ability to construct the deck of 52 unique cards.
+* Ability to construct a deck with 52 unique cards (13 cards in each suit).
 * Have a discard and draw pile.
 * Ability to draw a card from the draw pile.
 * Have ability to shuffle the deck of cards, and to re-add the cards from the discard pile back into our draw pile.
@@ -190,9 +188,9 @@ export class Deck {
 }
 ```
 
-In the code above, we created a new class that has three private properties for tracking the cards in our deck. We then added getters to return the values of these properties and we added in public methods to allow us to draw cards, shuffle the deck, and to re-shuffle back in the discard cards back into the draw pile. For the `shuffleInDiscardPile` method, one of the things in Solitaire is when you add the discard pile of cards back into the draw pile, you don't actually shuffle the cards, instead you just flip the card pile over and start drawing cards again. To recreate this, we just loop through pile of cards and add those cards in that order to the draw pile array. This is because when we draw cards, we are taking them from end of the array. Finally, in the `#createDeck` method, to create the deck of cards, we are looping through each of our card suits, and for each of these we are looping through the values of 1 through 13, and creating a card instance for each of these.
+In the code above, we created a new class that has three private properties for tracking the cards in our deck. We then added getters to return the values of these properties, and we added in public methods to allow us to: draw cards, shuffle the deck, and to re-shuffle back in the discard cards back into the draw pile. For the `shuffleInDiscardPile` method, one of the things in Solitaire is when you add the discard pile of cards back into the draw pile, you don't actually shuffle the cards, instead you just flip the card pile over and start drawing cards again. To recreate this, we just loop through pile of cards and add those cards in that order to the draw pile array. This is because when we draw cards, we are taking them from end of the array. Finally, in the `#createDeck` method, to create the deck of cards, we are looping through each of our card suits, and for each of these we are looping through the values of 1 through 13, and creating a card instance for each of these.
 
-For the `shuffle` method, this is referring to a utility function that we have not created yet. To shuffle the cards, we will use a common algorithm called [Fisher Yates Shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle), which is an in place shuffle algorithm. At a high level, we loop through the array we want to shuffle in reverse and then choose a random index to switch elements in the array around. To create this function, create a new file in the `src/lib` folder called `utils.ts` and add the following code:
+For the `shuffle` method, this is referring to a utility function that we have not created yet. To shuffle the cards, we will use a common algorithm called [Fisher Yates Shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle), which is an in place shuffle algorithm. At a high level, we loop through the array we want to shuffle in reverse, and then choose a random index to switch elements in the array around. To create this function, create a new file in the `src/lib` folder called `utils.ts` and add the following code:
 
 ```typescript
 export function shuffleArray<T>(array: T[]): void {
@@ -220,8 +218,8 @@ In the code above, we also introduced a new utility function called `exhaustiveG
 
 So one last thing we are going to do before we jump into our `Solitaire` class, is we are going to create a class to model one of our foundation piles. For the foundation piles, we will need to be able to support the following functionality:
 
-* Have properties to keep track of the card suit that goes on that pile and the current value of the pile.
-* Have methods to reset the initial value of the foundation pile and to add a new card to the foundation pile.
+* Have properties to keep track of the card suit that goes on that pile, and the current value of the pile.
+* Have methods to reset the initial value of the foundation pile, and to add a new card to the foundation pile.
 
 To do this, create a new file in the `src/lib` folder called `foundation-pile.ts`, and add the following code to the file:
 
@@ -327,7 +325,7 @@ In the code above, we created new private properties to track our various card p
 
 ### New Game Logic
 
-With the basic structure of our `Solitaire` class in place, we can now start working on building the actual logic for our class. To get started, we will focus on the `newGame` method. For the `newGame` method, this method will be responsible for setting up our card piles in our game. To do this, we will reset our game state so that way all of our card piles are empty, and our deck of cards will be shuffled. Once we do this, we will need to deal out cards to our 7 tableau card piles to match how our tableau piles are laid out in the `GameScene` class (1st pile has 1 card, 2nd pile has 2 cards, 3rd pile has 3 cards, and so on until we have 7 piles).
+With the basic structure of our `Solitaire` class in place, we can now start working on building the actual logic for our class. To get started, we will focus on the `newGame` method. For the `newGame` method, this method will be responsible for setting up our card piles in our game. To do this, we will reset our game state so that all of our card piles are empty, and our deck of cards will be shuffled. Once we do this, we will need to deal out cards to our 7 tableau card piles to match how our tableau piles are laid out in the `GameScene` class (1st pile has 1 card, 2nd pile has 2 cards, 3rd pile has 3 cards, and so on until we have 7 piles).
 
 To do this, update the `newGame` method to match the following code:
 
@@ -370,13 +368,13 @@ public newGame(): void {
 
 At this point, if we called the `newGame` method, our game state would look like the following:
 
-* The draw pile would have 24 piles, and the discard pile would have 0 cards.
+* The draw pile would have 24 cards, and the discard pile would have 0 cards.
 * The foundation piles would have 0 cards.
 * The seven tableau piles would have 28 cards like so: [1, 2, 3, 4, 5, 6, 7].
 
 ### Draw Card Logic
 
-For the `drawCard` method, when we draw a new card from the draw pile, we will want to flip this card over and add that card to the top of the discard pile. Besides this, we will return a boolean value indicating if we actually draw a new card or not. To do this, update the `drawCard` method to match the following code:
+For the `drawCard` method, when we draw a new card from the draw pile, we will want to flip this card over and add that card to the top of the discard pile. Besides this, we will return a boolean value indicating if we drew a new card or not. To do this, update the `drawCard` method to match the following code:
 
 ```typescript
 public drawCard(): boolean {
@@ -392,7 +390,7 @@ public drawCard(): boolean {
 
 ### Shuffle Discard Pile Logic
 
-For the `shuffleDiscardPile` method, we just need to call the `shuffleInDiscardPile` method on our `deck` instance. Besides this, we will just add a check to make sure that our draw card pile is empty, and then return a `boolean` value if we actually shuffled our cards. To do this, update the `shuffleDiscardPile` method to match the following code:
+For the `shuffleDiscardPile` method, we just need to call the `shuffleInDiscardPile` method on our `deck` instance. Besides this, we will also add a check to make sure that our draw card pile is empty, and then return a `boolean` value if we actually shuffled our cards. To do this, update the `shuffleDiscardPile` method to match the following code:
 
 ```typescript
 public shuffleDiscardPile(): boolean {
@@ -407,10 +405,10 @@ public shuffleDiscardPile(): boolean {
 
 ### Play Discard Cards
 
-For playing our discard cards, there are two possible moves: the card was played to a foundation pile or the card was played to a tableau pile. For both of these scenarios, we will want to validate if the card that was played is valid, and if so, then we add the `Card` instance to that location. For these changes, we will focus on the `playDiscardPileCardToFoundation` method first. When we play a card from the discard pile to the foundation pile, we will want do the following:
+For playing our discard cards, there are two possible moves: the card was played to a foundation pile, or the card was played to a tableau pile. For both of these scenarios, we will want to validate if the card that was played is valid, and if so, then we add the `Card` instance to that location. For these changes, we will focus on the `playDiscardPileCardToFoundation` method first. When we play a card from the discard pile to the foundation pile, we will want do the following:
 
 * First, get a reference to the top card in the discard pile. If there are no cards in the discard pile, we can return `false` since this is not a valid move.
-* Next, for the card that is being added, we will check the appropriate foundation pile and make sure this is the next card in the sequence. As an example, if I am trying to play the four of spades to the foundation pile, I will check the `#foundationPileSpade` property and see if the current value is `3`. If the current value is not `3`, then we would return `false`.
+* Next, for the card that is being added, we will check the appropriate foundation pile and make sure this is the next card in the sequence. As an example, if I am trying to play the four of spades to the foundation pile, I will check the `#foundationPileSpade` property, and see if the current value is `3`. If the current value is not `3`, then we would return `false`.
 * If the move is valid, then we just need to call the `addCard` method on our `FoundationPile` instance, and then we can remove this card from the discard pile array.
 
 To do this logic, update the `playDiscardPileCardToFoundation` method to match the following code:
@@ -493,8 +491,8 @@ Then in our IDE, we would see a warning since we did not cover each possible val
 So now, for the `playDiscardPileCardToTableau` method, when we play a card from the discard pile to a tableau pile, we will need to do the following:
 
 * First, get a reference to the top card in the discard pile. If there are no cards in the discard pile, we can return `false` since this is not a valid move.
-* Next, for the card that is being added, we will check the appropriate tableau pile and make sure this is a valid card in the sequence. As an example, if the tableau pile had a `5` of `diamonds` face up, I would be able to play either the `4` of `spades` or `4` of `clubs`. For the next card in the sequence, the card has to be the opposite color and the next number when counting down. If a valid move is not made, we would return `false`.
-* If the move is valid, then we just need to push this card into the tableau array for the pile we are adding the card to, and then we can remove this card from the discard pile array.
+* Next, for the card that is being added, we will check the appropriate tableau pile and make sure this is a valid card in the sequence. As an example, if the tableau pile had a `5` of `diamonds` face up, I would be able to play either the `4` of `spades` or `4` of `clubs`. For the next card in the sequence, the card has to be the opposite color, and the next number when counting down. If a valid move is not made, we would return `false`.
+* If the move is valid, then we just need to push this card into the tableau array, for the pile we are adding the card to, and then we can remove this card from the discard pile array.
 * If the tableau pile is empty, then the only card that can be played is a king, and this can be any suit.
 
 To do this logic, update the `playDiscardPileCardToTableau` method to match the following code:
@@ -554,7 +552,7 @@ Next, add the following code to the `Solitaire` class:
 }
 ```
 
-In the code above, to check if a card can be played to a tableau pile, the first thing we do is check if the pile is empty. If there are no cards, then the only card that can be played is a king, or a card with a value of `13`. If the card is not empty, then we get a reference to the last card in the stack, and then make sure that the card we are adding is the opposite color and the next number in sequence, counting down. Finally, we return `true`, if the move is valid.
+In the code above, to check if a card can be played to a tableau pile, the first thing we do is check if the pile is empty. If there are no cards, then the only card that can be played is a king, or a card with a value of `13`. If the pile is not empty, then we get a reference to the last card in the stack, and then make sure that the card we are adding is the opposite color, and the next number in sequence, counting down. Finally, we return `true`, if the move is valid.
 
 ### Moving Tableau Cards
 
@@ -597,7 +595,7 @@ Next, for moving cards from one tableau pile to another, we need to do the follo
 
 * For the provided tableau pile and card index, we need to make sure the provide card is currently face up (visible to the player). If the card is not visible, then we can return early.
 * Next, for the card that is being added, we will check the appropriate tableau pile and make sure this is a valid card in the sequence.
-* If the move is valid, than for each card that was part of the stack that was being moved, we need to add those cards to the new tableau pile array and remove those cards from the previous tableau pile array.
+* If the move is valid, than for each card that was part of the stack that was being moved, we need to add those cards to the new tableau pile array, and remove those cards from the previous tableau pile array.
 
 To do this logic, update the `moveTableauCardsToAnotherTableau` method to match the following code:
 
@@ -637,11 +635,11 @@ public moveTableauCardsToAnotherTableau(
 }
 ```
 
-In the code above, this is similar to the logic we added in the `playDiscardPileCardToTableau` method. The main differences are that we added a few safeguards to make sure the provided tableau indexes and card index values are valid, that the card is visible to the player. Lastly, since we can move a stack of cards, instead of a single card, we need to make sure we move each card to the correct tableau pile array.
+In the code above, this is similar to the logic we added in the `playDiscardPileCardToTableau` method. The main differences are that we added a few safeguards to make sure the provided tableau indexes and card index values are valid, and that the card is visible to the player. Lastly, since we can move a stack of cards, instead of a single card, we need to make sure we move each card to the correct tableau pile array.
 
 ### Flip Tableau Card
 
-The last piece of logic we need to add to our `Solitaire` class, is the logic for the `flipTopTableauCard` method. In this method, we will be using this to check if we need to flip the last card in a tableau pile over, and we return a `boolean` value indicating if we flipped the card over or not. This will be used after we move the last visible card in a tableau pile to another tableau pile or the foundation pile.
+The last piece of logic we need to add to our `Solitaire` class, is the logic for the `flipTopTableauCard` method. In this method, we will be using this to check if we need to flip the last card in a tableau pile over, and we return a `boolean` value indicating if we flipped the card over or not. This will be used after we move the last visible card in a tableau pile to another tableau pile, or the foundation pile.
 
 To do this logic, update the `flipTopTableauCard` method to match the following code:
 
@@ -750,13 +748,13 @@ import { FoundationPile } from '../lib/foundation-pile';
 
 In the `#showCardsInDrawPile` method, we added logic to modify the number of cards that we are displaying in the draw pile. With this change, once we get down to two or one cards in the draw pile, the draw pile in our Scene will only show that number of cards. In the `#getCardFrame` method, we are using the `SUIT_FRAMES` variable to figure out what is the frame we need to use for the card we are showing to the player. In our spritesheet, the cards are organized by card suit, and they are ordered in sequential order, and so we can use the starting frame combined with the card value we want to show to find the correct frame. Besides these changes, the rest of the code implements the logic we outlined above and calls the appropriate methods on our `Solitaire` class instance.
 
-If you save your code changes and view the game in the browser, if you click on the draw pile, we should see the cards start to appear in the discard pile. If we cycle through the draw card pile, we should see that the draw pile updates to only show 1 or 2 cards once we start to run of cards, and finally once the pile is empty, the discard pile should be added back to the draw pile.
+If you save your code changes and view the game in the browser, if you click on the draw pile, you should see the cards start to appear in the discard pile. If we cycle through the draw card pile, you should see that the draw pile updates to only show 1 or 2 cards once we start to run of cards, and finally once the pile is empty, the discard pile should be added back to the draw pile.
 
 ![Updated draw pile](./images/solitaire-phaser-3-tutorial-4-3.gif)
 
 ### Update Create Tableau Pile Logic
 
-Currently, in the `#createTableauPiles` method, we are manually creating each of our Card Image game objects, and we are setting each frame of the Image game objects to be the card back frame and we are making each card enabled to be draggable. Instead, we will want to update this method to use the `tableauPiles` property on our `Solitaire` game instance, and then update each Card Image game object to have the correct frame based on the actual game state. Finally, we will only want cards that are face up to be draggable. To make these changes, we will replace all of the code in the `#createTableauPiles` method with the following code:
+Currently, in the `#createTableauPiles` method, we are manually creating each of our Card Image game objects, and we are setting each frame of the Image game objects to be the card back frame, and we are making each card enabled to be draggable. Instead, we will want to update this method to use the `tableauPiles` property on our `Solitaire` game instance, and then update each Card Image game object to have the correct frame based on the actual game state. Finally, we will only want cards that are face up to be draggable. To make these changes, we will replace all of the code in the `#createTableauPiles` method with the following code:
 
 ```typescript
 this.#tableauContainers = [];
@@ -798,7 +796,7 @@ if (discardPileCard === undefined) {
 
 In the code above, we grab the 2nd to last card from the `discardPile` in our `Solitaire` game state. If there is no card, we update the bottom discard pile Card Image game object to not be visible, and if a card is found, we then update the `frame` to show the correct card texture.
 
-If you save your code changes and view the game in the browser, if we fill up the cards in our discard pile and play cards from the discard pile, we should see that the bottom card is updated to have the correct card image.
+If you save your code changes and view the game in the browser, if we fill up the cards in the discard pile and play cards from the discard pile, you should see that the bottom card is updated to have the correct card image.
 
 ![Updated discard piles](./images/solitaire-phaser-3-tutorial-4-5.gif)
 
@@ -816,7 +814,7 @@ this.#solitaire.foundationPiles.forEach((pile: FoundationPile, pileIndex: number
 
 In the code above, we are looping through each of the foundation piles in our `Solitaire` game instance, and as long as the `value` on the pile is not `0`, which means the pile is empty, we then update the Card Image game object to be visible and to have the correct `frame`.
 
-If you save your code changes and view the game in the browser, if we add a valid card to the foundation pile, we should see that the texture on the foundation pile is updated.
+If you save your code changes and view the game in the browser, if you add a valid card to the foundation pile, you should see that the texture on the foundation pile is updated.
 
 ![Updated foundation piles](./images/solitaire-phaser-3-tutorial-4-6.gif)
 
