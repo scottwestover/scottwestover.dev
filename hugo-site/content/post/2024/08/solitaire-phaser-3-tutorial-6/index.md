@@ -1,6 +1,6 @@
 ---
 title: "Solitaire HTML5 Game Tutorial With Phaser 3 Part 6: Title Scene"
-date: 2023-05-04 16:00:02
+date: 2024-08-31 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -20,7 +20,7 @@ categories: [
   "Phaser3"
 ]
 desc: Learn how to create the classic game Solitaire in TypeScript with the amazing Phaser 3 framework!
-draft: true
+draft: false
 thumbnail: "/post/2024/08/solitaire-phaser-3-tutorial-6/images/solitaire-phaser-3-tutorial-6-thumbnail.png"
 toc: false
 ---

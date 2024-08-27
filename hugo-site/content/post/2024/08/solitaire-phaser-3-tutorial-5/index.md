@@ -1,6 +1,6 @@
 ---
 title: "Solitaire HTML5 Game Tutorial With Phaser 3 Part 5: Core Solitaire Logic"
-date: 2023-05-04 16:00:02
+date: 2024-08-30 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -20,7 +20,7 @@ categories: [
   "Phaser3"
 ]
 desc: Learn how to create the classic game Solitaire in TypeScript with the amazing Phaser 3 framework!
-draft: true
+draft: false
 thumbnail: "/post/2024/08/solitaire-phaser-3-tutorial-5/images/solitaire-phaser-3-tutorial-5-thumbnail.png"
 toc: false
 ---
@@ -852,4 +852,6 @@ You can find the completed source code for this article here on GitHub: [Part 5 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-In [part 6](/post/2024/08/solitaire-phaser-3-tutorial-6/) of this series, we will wrap up our game by adding in a new Title Scene with a nice scene transition.
+<!-- In [part 6](/post/2024/08/solitaire-phaser-3-tutorial-6/) of this series, we will wrap up our game by adding in a new Title Scene with a nice scene transition. -->
+
+In part 6 of this series, we will wrap up our game by adding in a new Title Scene with a nice scene transition.

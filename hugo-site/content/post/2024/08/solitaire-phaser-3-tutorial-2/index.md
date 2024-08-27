@@ -1,6 +1,6 @@
 ---
 title: "Solitaire HTML5 Game Tutorial With Phaser 3 Part 2: Game Layout"
-date: 2023-05-04 16:00:02
+date: 2024-08-27 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -20,7 +20,7 @@ categories: [
   "Phaser3"
 ]
 desc: Learn how to create the classic game Solitaire in TypeScript with the amazing Phaser 3 framework!
-draft: true
+draft: false
 thumbnail: "/post/2024/08/solitaire-phaser-3-tutorial-2/images/solitaire-phaser-3-tutorial-2-thumbnail.png"
 toc: false
 ---
@@ -35,7 +35,7 @@ In part 2 of this series, we are going to start building out the layout of our g
 
 ## Create Draw Pile
 
-So now that we have loaded in our assets we will use for our game, and we have seen how we can render out image game objects in our Phaser Scene, we are going to start building the four different card piles that make up our game area. To get started, we will focus on the draw pile.
+So now that we have loaded in our assets that we will use for our game, and we have seen how we can render out Image game objects in our Phaser Scene, we are going to start building the four different card piles that make up our game area. To get started, we will focus on the draw pile.
 
 For the card draw pile, this will be made up of two different game object types, a basic Rectangle game object and multiple Image game objects. The Rectangle game object is one of the basic shape game objects that is built in Phaser, and this can be used for quickly creating a rectangle in our game. For our card draw pile, we will be rendering out a simple rectangle to show were the card draw pile is placed in our game. When there is no cards in the card draw pile, this will be visible to the player and later on, the player will be able to click in that area to shuffle back in the discard cards. When there are cards in the draw card pile, these will be rendered on top of the rectangle.
 
@@ -178,7 +178,7 @@ In the code above, we first created another Rectangle game object that shows wer
 
 ![Discard pile card](./images/solitaire-phaser-3-tutorial-2-4.png)
 
-For the discard pile, even though there will be no cards in the pile when the game starts, we will still create our two Image game objects. By making these invisible when the game starts, we can re-use these game objects later. Now, for our discard pile, we will only end up showing up to two cards at a time in our game, the two most recently drawn cards. Due to this, we will end up re-using these two game objects by updating the textures on these objects and by setting the visibility on these game objects.
+For the discard pile, even though there will be no cards in the pile when the game starts, we will still create our two Image game objects. By making these invisible when the game starts, we can re-use these game objects later. Now, for our discard pile, we will end up showing only two cards at a time in our game, the two most recently drawn cards. Due to this, we will end up re-using these two game objects by updating the textures on these objects and by setting the visibility on these game objects.
 
 Here is an example of how we will be showing the two cards in our discard pile:
 
@@ -278,4 +278,6 @@ You can find the completed source code for this article here on GitHub: [Part 2 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-In [part 3](/post/2024/08/solitaire-phaser-3-tutorial-3/) of this series, we will start to add support for handling player input in our game.
+<!-- In [part 3](/post/2024/08/solitaire-phaser-3-tutorial-3/) of this series, we will start to add support for handling player input in our game. -->
+
+In part 3 of this series, we will start to add support for handling player input in our game.

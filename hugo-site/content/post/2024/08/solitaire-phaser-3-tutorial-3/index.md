@@ -1,6 +1,6 @@
 ---
 title: "Solitaire HTML5 Game Tutorial With Phaser 3 Part 3: Player Input"
-date: 2023-05-04 16:00:02
+date: 2024-08-28 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -20,7 +20,7 @@ categories: [
   "Phaser3"
 ]
 desc: Learn how to create the classic game Solitaire in TypeScript with the amazing Phaser 3 framework!
-draft: true
+draft: false
 thumbnail: "/post/2024/08/solitaire-phaser-3-tutorial-3/images/solitaire-phaser-3-tutorial-3-thumbnail.png"
 toc: false
 ---
@@ -38,7 +38,7 @@ With our game layout completed, it is now time to start focusing on adding suppo
 * dragging cards
 * clicking on cards to draw them
 
-In the game, the player will need to be able to click on the draw pile to draw a new card that can be played to the foundation or tableau piles. Besides this, the player will need to be able to click and hold a card to drag the card around our Phaser Scene, and with this, the player will be able to play cards from the various piles to the tableau or foundation. To get started, we will focus on making our card game objects draggable.
+In the game, the player will need to be able to click on the draw pile to draw a new card, which can then be played to the foundation or tableau piles. Besides this, the player will need to be able to click and hold a card to drag the card around our Phaser Scene, and with this, the player will be able to play cards from the various piles to the tableau or foundation. To get started, we will focus on making our card game objects draggable.
 
 ## Dragging Cards
 
@@ -56,7 +56,7 @@ To get started with the code changes, update the `#createCard` method in the `Ga
 }
 ```
 
-In the code above, we did two things: first we added a new argument `draggable` which which will be a `boolean` value to indicate if we want our Image game object to be draggable, and next we called the `setInteractive` method on the Image game object. When we call the `setInteractive` method, we have the option to pass additional configuration options, and in our case we passed the `draggable` field. When this field is set to `true`, this will tell Phaser to enable this game object for drag events and the framework will emit these events, along with our other input events. By default, this will be set to `false` for our game objects, and so we will need to enable this.
+In the code above, we did two things: first we added a new argument `draggable` which will be a `boolean` value to indicate if we want our Image game object to be draggable, and next we called the `setInteractive` method on the Image game object. When we call the `setInteractive` method, we have the option to pass additional configuration options, and in our case we passed the `draggable` field. When this field is set to `true`, this will tell Phaser to enable this game object for drag events and the framework will emit these events, along with our other input events. By default, this will be set to `false` for our game objects, and so we will need to enable this.
 
 With the update to our `#createCard` method, we will need to update the rest of our code to pass the new argument. Update the following methods to pass the new argument:
 
@@ -67,7 +67,7 @@ With the update to our `#createCard` method, we will need to update the rest of 
 
 So, for our `draw` and `foundation` piles, we will not want to allow dragging cards from these areas. Instead, for the draw pile we will only allow click events, and for the foundation pile, we will only allow cards to be placed there. For the `discard` and `tableau` piles, we want to allow cards to be dragged from these two areas.
 
-Now, when are game refreshes, there will be no visible differences in our game. To actually make use of our new interactive game objects, we need to register event listeners to handle moving our game objects. To do this, add the following code to the bottom of the `create` method:
+Now, when the game refreshes, there will be no visible differences in our game. To actually make use of our new interactive game objects, we need to register event listeners to handle moving our game objects. To do this, add the following code to the bottom of the `create` method:
 
 ```typescript
 // setup drop zones for interactions and events for drag
@@ -133,7 +133,7 @@ Next, add the following code to the `GameScene` class:
 }
 ```
 
-In the code above, we created four new private methods. The `#createDragEvents` method will be invoked when our Phaser Scene is created, and is used to initialize all of our drag event listeners, which is the code in the other three methods. In each of those methods, we ended up registering an event listener with Phaser for when there is an input event of a specific type. How this works is in the Phaser framework, there is an Event Emitter class that is used internally to emit a variety of events, and that same class allows you to register an event listener that will be called when that event is sent. What is really cool about Phaser is that this class is used internally on most resources, which means you can listen for events on your Game Objects, Scenes, Plugins, and much more! By default, any object type that has a built in Event Emitter, you will be able to use the `on` method to register an event listener.
+In the code above, we created four new private methods. The `#createDragEvents` method will be invoked when our Phaser Scene is created, and is used to initialize all of our drag event listeners, which is the code in the other three methods. In each of those methods, we ended up registering an event listener with Phaser for when there is an input event of a specific type. In the Phaser framework, there is an Event Emitter class that is used internally to emit a variety of events, and that same class allows you to register an event listener that will be called when that event is sent. What is really cool about Phaser is that this class is used internally on most resources, which means you can listen for events on your Game Objects, Scenes, Plugins, and much more! By default, on any object type that has a built in Event Emitter, you will be able to use the `on` method to register an event listener.
 
 In the three methods above, we are listening for 3 different event types: `dragstart`, `drag`, and `dragend`. These three events are tied to the click and drag events, and by listening for these events on the Scene Input Plugin (`this.input`), we will invoke our event listener callback for any game object that is dragged in our Scene. To see an example, if you click and drag one of the cards in the Scene, you should see some information be logged to the developer console.
 
@@ -150,7 +150,7 @@ At a high level, we did the following for each of the event types in the code ab
 * In the `#createOnDragEventListener` method, we registered an event listener for the `drag` event, and when we get this event we are updating the game objects position to match the `x` and `y` value of the pointer object that was provided. This allows us to click and drag the game objects in our Scene.
 * In the `#createDragEndEventListener` method, we registered an event listener for the `dragend` event, and when we get this event we are logging information about the game object and resetting the alpha on the game object back to the original value.
 
-Note: in the code, there are a number of `TODO:` comments for code that we will need to add, and for the time being these can be ignored.
+**Note:** in the code, there are a number of `TODO:` comments for code that we will need to add, and for the time being these can be ignored.
 
 ## Game Object Depth
 
@@ -162,7 +162,7 @@ This is due to how `depth` and how Phaser renders our game objects in our Scene.
 
 ![Depth example 2](./images/solitaire-phaser-3-tutorial-3-3.png)
 
-When we add these cards to our Scene, Phaser is drawing them one by one onto our Canvas element, which gives us the appearance of depth in our game. Now, this is how Phaser will render objects by default, but the framework also always you to control this with a number of built in methods and with the `depth` property on the game objects that are created. By default, all game objects with have a `depth` of `0`, and how this property can be used is Phaser will render out game objects with a higher depth on top of game objects of a lower depth. To see an example of this, if you add the following line of code to the bottom of the `#createDrawPile` method:
+When we add these cards to our Scene, Phaser is drawing them one by one onto our Canvas element, which gives us the appearance of depth in our game. Now, this is how Phaser will render objects by default, but the framework also always you to control this with a number of built in methods and with the `depth` property on the game objects that are created. By default, all game objects will have a `depth` of `0`, and Phaser will render out game objects with a higher depth on top of game objects of a lower depth. To see an example of this, if you add the following line of code to the bottom of the `#createDrawPile` method:
 
 ```typescript
 this.#drawPileCards[1].setDepth(2);
@@ -188,7 +188,7 @@ Now, if we test our code, it looks like we still have the same issue. What is ha
 
 ## Game Object Data
 
-In order to store custom data on our Phaser Game Objects, one of the ways to do this is to use the built in Data Manager for a game object. The Data Manager is a custom class that allows us to store and retrieve data on a Game Object instance, and this works as a simple key/value storage system, were we can provide a key, a `string`, that has a unique name along with a value of any type, and Phaser will store this data on the Game Object. For example, if I wanted to give each object a unique id, I could store a field called `id` with a value of the id. A good way to think about the Data Manager, is to think of this as a basic `object`, where the `key` you add is one of the `keys` on your object and the `value` you set will be the value associated with that `key`. By using the built in Data Manager, we can store any type of data we want and we don't have to worry about creating a custom class to hold this information or worry about overwriting one of the properties on the game object class we created.
+In order to store custom data on our Phaser Game Objects, one of the ways to do this is to use the built in Data Manager for a game object. The Data Manager is a custom class that allows us to store and retrieve data on a Game Object instance, and this works as a simple key/value storage system, were we can provide a key, a `string`, that has a unique name along with a value of any type, and Phaser will store this data on the Game Object. For example, if I wanted to give each object a unique id, I could store a field called `id` with a value of the id. A good way to think about the Data Manager, is to think of this as a basic `object`, where the `key` you add is one of the `keys` on your object and the `value` you set will be the value associated with that `key`. By using the built in Data Manager, we can store any type of data we want and we don't have to worry about creating a custom class to hold this information, or worry about overwriting one of the properties on the game object class we created.
 
 Now, to actually use the built in Data Manager on a game object, we need to use the `setData` and `getData` methods. These two methods will create an instance of the Data Manager class on our Game Object instance if one does not exist, and then we can use these to set and retrieve values. To do this in our code, we will update the `#createCard` method to match the following code:
 
@@ -226,7 +226,7 @@ Now, when we call the `setData` method, there are two ways we can pass data. The
 * **cardIndex**: set if the `cardIndex` argument is provided
 * **pileIndex**: set if the `pileIndex` argument is provided
 
-The `x` and `y` values will be used later so we can reset our card game objects position if an invalid move is made. Currently, our code allows the player to drag the cards anywhere on the game area, and ideally we only want to allow the player to drag a card to a valid position. By storing this information, we will be able to reset the game objects position later on once we implement this. The `cardIndex` and `pileIndex` values will also be used during our drag event logic, and will be used for knowing if a card comes from the `tableau` pile, and if so, which card in the stack was moved. For the time being, this will be used to update our tableau container game objects depth when we move a game object.
+The `x` and `y` values will be used later so we can reset our card game objects position if an invalid move is made. Currently, our code allows the player to drag the cards anywhere on the game area, and ideally we only want to allow the player to drag a card to a valid position. By storing this information, we will be able to reset the game objects position later on, once we implement this. The `cardIndex` and `pileIndex` values will also be used during our drag event logic, and will be used for knowing if a card comes from the `tableau` pile, and if so, which card in the stack was moved. For the time being, this will be used to update our tableau container game objects depth when we move a game object.
 
 So, to make use of these new properties, we need to update our code to pass these values. For the time being, we only need to make this change in our `#createTableauPiles` method. In the `#createTableauPiles` method, replace the following line of code:
 
@@ -269,7 +269,7 @@ gameObject.setAlpha(0.8);
 
 In the code above, we did the following:
 
-* First, we updated the `x` and `y` values that we are storing in the game objects data manager. This is being done since as we move objects around our Scene, we will want to make sure we store the latest `x` and `y` value of the game object before we start moving it, that way we can reset back to the most recent position.
+* First, we updated the `x` and `y` values that we are storing in the game objects data manager. This is being done since, as we move objects around our Scene, we will want to make sure we store the latest `x` and `y` value of the game object before we start moving it, that way we can reset back to the most recent position.
 * Next, we used the `getData` method to lookup the `pileIndex` value from the data manager. If this `key` is found on the game objects data manager, then Phaser will return that value, otherwise `undefined` will be returned. If we find this value, then we use that index to update the `depth` of the `tableauContainer` container that the card game object belongs to. If not found, then we update the depth on the card game object directly. This will allow us to handle when we drag cards from our discard pile later.
 
 With the changes done on our `dragstart` event listener, we need to do similar logic on the `enddrag` event listener. In the `#createDragEndEventListener` method, add the following code below the `TODO` line of code for resetting the game object depth:
@@ -341,7 +341,7 @@ if (tableauPileIndex !== undefined) {
 }
 ```
 
-In the code above, we are using grabbing the `pileIndex` and `cardIndex` values from the data manager and then using these two values to call the `#getNumberOfCardsToMoveAsPartOfStack` method. Based on the return value of this method, we are then grabbing that number of cards from the relevant `#tableauContainer` by using the `getAt` method. This method allows us to get a game object in a container based on its index. Finally, we are updating the position of the game object that was found to have the same `x` value as the card that is being dragged, but then we are incrementing the `y` value a little bit so the card will be stacked on top of the card we are dragging.
+In the code above, we are grabbing the `pileIndex` and `cardIndex` values from the data manager, and then using these two values to call the `#getNumberOfCardsToMoveAsPartOfStack` method. Based on the return value of this method, we are then grabbing that number of cards from the relevant `#tableauContainer` by using the `getAt` method. This method allows us to get a game object in a container based on its index. Finally, we are updating the position of the game object that was found to have the same `x` value as the card that is being dragged, but then we are incrementing the `y` value a little bit so the card will be stacked on top of the card we are dragging.
 
 ![Drag stack of cards 1](./images/solitaire-phaser-3-tutorial-3-7.gif)
 
@@ -401,11 +401,11 @@ if (DEBUG) {
 }
 ```
 
-then, at the top of the file, change the value of the `DEBUG` variable to be `true`. This will render out a red rectangle, which is the shape of the Zone game object that was created. If you click anywhere on the red rectangle, you should see the message in the developer console, and if you click anywhere else in the game, there should be no message.
+Then, at the top of the file, change the value of the `DEBUG` variable to be `true`. This will render out a red rectangle, which is the shape of the Zone game object that was created. If you click anywhere on the red rectangle, you should see the message in the developer console, and if you click anywhere else in the game, there should be no message.
 
 ![Debug draw pile](./images/solitaire-phaser-3-tutorial-3-10.png)
 
-So the last thing we are going to do with our draw pile for the time being is we are going to update our click event listener to go ahead and "add" cards to our discard pile. In our game of Solitaire, as we draw new cards from the draw pile they will be automatically placed on top of the discard pile, and from this pile the player will be able to play those cards to the foundation or tableau piles. As they play cards from the discard pile, they will be able to keep playing cards one after another, as long as they can play the top discard pile. For the time being, we will just update our draw card pile to make the two card objects we created before visible.
+So the last thing we are going to do with our draw pile for the time being, is we are going to update our click event listener to go ahead and "add" cards to our discard pile. In our game of Solitaire, as we draw new cards from the draw pile, they will be automatically placed on top of the discard pile, and from this pile the player will be able to play those cards to the foundation or tableau piles. As they play cards from the discard pile, they will be able to keep playing cards one after another, as long as they can play the top discard pile. For the time being, we will just update our draw card pile to make the two card objects we created earlier, visible.
 
 To do this, replace the following line of code in the event listener on the draw card zone:
 
@@ -427,7 +427,7 @@ In the code above, we are doing two things:
 * First we are updating the bottom card game object in our discard pile to match the top card of our discard pile, and we are doing this by updating the `frame` of the image and by making the card visible based on the other card. The reason we are doing this is, as we add a new card to the discard pile, we will want this card displayed on top of all of the other cards, and so to create this effect we will have the bottom card mirror the top card.
 * Next, we are updating the top card to be visible and and we are updating the frame of the image game object. For the time being, we are just setting the card to the card back frame, but once we start adding in the actual cards, this will be updated to match the frame of the card that was just drawn.
 
-In the browser, if you click on the draw card pile, you should see the top card become visible in the discard pile, and if you try moving the card we will see that there are no cards below that card. Next, if you draw one more card, and then move the top card on the discard pile, you will see now that there is a card below that card.
+In the browser, if you click on the draw card pile, you should see the top card become visible in the discard pile, and if you try moving the card we will see that there are no cards below that card. Next, if you draw one more card and then move the top card on the discard pile, you will see now there is another card below that card.
 
 ![Discard pile cards](./images/solitaire-phaser-3-tutorial-3-11.gif)
 
@@ -439,4 +439,6 @@ You can find the completed source code for this article here on GitHub: [Part 3 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-In [part 4](/post/2024/08/solitaire-phaser-3-tutorial-4/) of this series, we will start to add logic to allow us to move cards between the various card piles in our game.
+<!-- In [part 4](/post/2024/08/solitaire-phaser-3-tutorial-4/) of this series, we will start to add logic to allow us to move cards between the various card piles in our game. -->
+
+In part 4 of this series, we will start to add logic to allow us to move cards between the various card piles in our game.
