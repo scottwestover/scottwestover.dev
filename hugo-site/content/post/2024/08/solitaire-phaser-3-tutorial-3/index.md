@@ -439,6 +439,4 @@ You can find the completed source code for this article here on GitHub: [Part 3 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-<!-- In [part 4](/post/2024/08/solitaire-phaser-3-tutorial-4/) of this series, we will start to add logic to allow us to move cards between the various card piles in our game. -->
-
-In part 4 of this series, we will start to add logic to allow us to move cards between the various card piles in our game.
+In [part 4](/post/2024/08/solitaire-phaser-3-tutorial-4/) of this series, we will start to add logic to allow us to move cards between the various card piles in our game.

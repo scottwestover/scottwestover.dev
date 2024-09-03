@@ -850,6 +850,4 @@ You can find the completed source code for this article here on GitHub: [Part 5 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-<!-- In [part 6](/post/2024/08/solitaire-phaser-3-tutorial-6/) of this series, we will wrap up our game by adding in a new Title Scene with a nice scene transition. -->
-
-In part 6 of this series, we will wrap up our game by adding in a new Title Scene with a nice scene transition.
+ In [part 6](/post/2024/08/solitaire-phaser-3-tutorial-6/) of this series, we will wrap up our game by adding in a new Title Scene with a nice scene transition.

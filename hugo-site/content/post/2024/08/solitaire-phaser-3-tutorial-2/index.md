@@ -278,6 +278,4 @@ You can find the completed source code for this article here on GitHub: [Part 2 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-<!-- In [part 3](/post/2024/08/solitaire-phaser-3-tutorial-3/) of this series, we will start to add support for handling player input in our game. -->
-
-In part 3 of this series, we will start to add support for handling player input in our game.
+In [part 3](/post/2024/08/solitaire-phaser-3-tutorial-3/) of this series, we will start to add support for handling player input in our game.

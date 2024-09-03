@@ -420,6 +420,4 @@ You can find the completed source code for this article here on GitHub: [Part 4 
 
 If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
 
-<!-- In [part 5](/post/2024/08/solitaire-phaser-3-tutorial-5/) of this series, we work on adding the core game logic to our `Solitaire` class and connect this logic to our `GameScene`. -->
-
-In part 5 of this series, we work on adding the core game logic to our `Solitaire` class and connect this logic to our `GameScene`.
+In [part 5](/post/2024/08/solitaire-phaser-3-tutorial-5/) of this series, we work on adding the core game logic to our `Solitaire` class and connect this logic to our `GameScene`.
