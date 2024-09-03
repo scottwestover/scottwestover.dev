@@ -776,7 +776,7 @@ this.#solitaire.tableauPiles.forEach((pile, pileIndex) => {
 
 If you save your code changes and view the game in the browser, you should see that the last card in each tableau pile is now face up, and if you try to move the face up cards, you can drag them, but if you try to drag face down cards, they will not be movable.
 
-![Updated tableau piles](./images/solitaire-phaser-3-tutorial-4-4.gif)
+![Updated tableau piles](./images/solitaire-phaser-3-tutorial-5-4.gif)
 
 ### More Game Scene Updates
 
@@ -798,7 +798,7 @@ In the code above, we grab the 2nd to last card from the `discardPile` in our `S
 
 If you save your code changes and view the game in the browser, if we fill up the cards in the discard pile and play cards from the discard pile, you should see that the bottom card is updated to have the correct card image.
 
-![Updated discard piles](./images/solitaire-phaser-3-tutorial-4-5.gif)
+![Updated discard piles](./images/solitaire-phaser-3-tutorial-5-5.gif)
 
 Next, we need to update the `#updateFoundationPiles` method to update each of the Card Image game objects that represent our foundation piles to have the correct `frame` based on the state in our `Solitaire` game instance. To do this, replace the logic in the `#updateFoundationPiles` method with the following code:
 
@@ -838,7 +838,7 @@ if (flipTableauCard) {
 
 If you save your code changes and view the game in the browser, if you move a card from the tableau pile to another pile, which results in the last card in that stack not being flipped over, the game logic should now flip that card.
 
-![Update tableau pile to flip cards](./images/solitaire-phaser-3-tutorial-4-7.gif)
+![Update tableau pile to flip cards](./images/solitaire-phaser-3-tutorial-5-7.gif)
 
 With those last changes, we have now completed our Solitaire game, and you should be able to play a whole game!
 
