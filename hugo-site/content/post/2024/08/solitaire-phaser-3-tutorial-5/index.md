@@ -816,7 +816,7 @@ In the code above, we are looping through each of the foundation piles in our `S
 
 If you save your code changes and view the game in the browser, if you add a valid card to the foundation pile, you should see that the texture on the foundation pile is updated.
 
-![Updated foundation piles](./images/solitaire-phaser-3-tutorial-4-6.gif)
+![Updated foundation piles](./images/solitaire-phaser-3-tutorial-5-6.gif)
 
 Finally, one last change we need to make is we need to add the logic to the `#handleRevealingNewTableauCards` method. In this method, we need to update the `depth` on our tableau container game object to be `0`, that way our depth is reset properly. Then, we need to check and see if we need to flip over the next card in the tableau pile that a card was just moved from. To do this check, we will call the `flipTopTableauCard` method on our `Solitaire` class, and if a card is flipped over, then we update the relevant Card Image game object to have the correct texture and update that game object to be draggable. To make these code changes, replace the code in the `#handleRevealingNewTableauCards` method with the following code:
 
