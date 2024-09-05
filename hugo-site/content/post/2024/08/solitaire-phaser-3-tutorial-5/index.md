@@ -750,7 +750,7 @@ In the `#showCardsInDrawPile` method, we added logic to modify the number of car
 
 If you save your code changes and view the game in the browser, if you click on the draw pile, you should see the cards start to appear in the discard pile. If we cycle through the draw card pile, you should see that the draw pile updates to only show 1 or 2 cards once we start to run of cards, and finally once the pile is empty, the discard pile should be added back to the draw pile.
 
-![Updated draw pile](./images/solitaire-phaser-3-tutorial-4-3.gif)
+![Updated draw pile](./images/solitaire-phaser-3-tutorial-5-3.gif)
 
 ### Update Create Tableau Pile Logic
 
