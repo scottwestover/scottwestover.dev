@@ -29,6 +29,19 @@
                 "key": "fF5IT3"
             },
             {
+                "url": "assets/fullscreen.png",
+                "frameConfig": {
+                    "frameWidth": 64,
+                    "frameHeight": 64,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "fullscreen"
+            },
+            {
                 "url": "assets/text/nice.png",
                 "type": "image",
                 "key": "nice"
