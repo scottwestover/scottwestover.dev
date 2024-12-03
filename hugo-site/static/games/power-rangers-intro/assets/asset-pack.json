@@ -1,0 +1,44 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
+                "url": "assets/power_rangers/lightning_spritesheet.png",
+                "frameConfig": {
+                    "frameWidth": 256,
+                    "frameHeight": 213,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "lightning_spritesheet"
+            },
+            {
+                "atlasURL": "assets/power_rangers/logo_spritesheet.json",
+                "textureURL": "assets/power_rangers/logo_spritesheet.png",
+                "type": "atlas",
+                "key": "logo_spritesheet"
+            },
+            {
+                "url": [
+                    "assets/power_glove_power_rangers.mp3"
+                ],
+                "type": "audio",
+                "key": "power_glove_power_rangers"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
