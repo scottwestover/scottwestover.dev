@@ -48,7 +48,7 @@ export default class Preload extends Phaser.Scene {
 	}
 
 	create() {
-		this.time.delayedCall(5000, () => {
+		this.time.delayedCall(1000, () => {
 			this.cameras.main.fadeOut(500, 0, 0, 0);
 			this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
 				this.scene.start("Info");
