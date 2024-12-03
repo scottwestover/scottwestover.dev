@@ -74,6 +74,7 @@ export default class Info extends Phaser.Scene {
 		this.cameras.main.fadeIn(500, 0, 0, 0);
 
 		this.input.once(Phaser.Input.Events.POINTER_DOWN, () => {
+			this.scene.scale.startFullscreen();
 			this.cameras.main.fadeOut(500, 0, 0, 0);
 			this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
 				this.scene.start("Title");
