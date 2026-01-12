@@ -1,0 +1,52 @@
+[
+  {
+    "type": "setBackground",
+    "image": "1_missing",
+    "transition": { "type": "fade", "duration": 1000 }
+  },
+  {
+    "type": "dialog",
+    "text": "Your friend, Alex, has been missing for three days. The police have no leads. His last text was from the old, abandoned Crestwood Mall. You told him not to go.",
+    "audioKey": "prologue_1"
+  },
+  {
+    "type": "setBackground",
+    "image": "2_door",
+    "transition": { "type": "fade", "duration": 500 }
+  },
+  {
+    "type": "dialog",
+    "text": "You had to be sure. You had to look for yourself. The air inside is stale, heavy with the ghosts of forgotten commerce.",
+    "audioKey": "prologue_2"
+  },
+  {
+    "type": "setBackground",
+    "image": "3_wall_paper",
+    "transition": { "type": "fade", "duration": 500 }
+  },
+  {
+    "type": "dialog",
+    "text": "Deep in the service corridors, you find something... out of place. A section of wall that feels wrong. It's damp to the touch, and the wallpaper hums with a faint, almost imperceptible energy.",
+    "audioKey": "prologue_3"
+  },
+  {
+    "type": "setBackground",
+    "image": "4_no_clip",
+    "transition": { "type": "fade", "duration": 500 }
+  },
+  {
+    "type": "dialog",
+    "text": "As your fingers make contact, the world dissolves into a deafening roar of static. The floor gives way. You are falling.",
+    "audioKey": "prologue_4"
+  },
+  {
+    "type": "setBackground",
+    "image": "5_hallway",
+    "transition": { "type": "static-dissolve", "duration": 2000 }
+  },
+  {
+    "type": "event",
+    "name": "PROLOGUE_CINEMATIC_END",
+    "payload": { "nextScene": "GameScene" }
+  }
+]

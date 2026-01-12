@@ -1,0 +1,72 @@
+[
+    {
+        "type": "setBackground",
+        "image": "5_hallway",
+        "transition": { "type": "cut", "duration": 0 }
+    },
+    {
+        "type": "dialog",
+        "text": "The harsh hum of fluorescent lights is the first thing you notice. The second is the nauseating yellow of the endless walls. Where... where am I? I need to find a way out.",
+        "audioKey": "prologue_5"
+    },
+    {
+        "type": "event",
+        "name": "TUTORIAL_REVEAL_EMPTY_FOP"
+    },
+    {
+        "type": "dialog",
+        "text": "This is the Field of Play (FOP). This represents the backrooms and the surrounding area around you.",
+        "audioKey": "prologue_6"
+    },
+    {
+        "type": "event",
+        "name": "TUTORIAL_REVEAL_STARTING_CARD"
+    },
+    {
+        "type": "dialog",
+        "text": "The Field of Play (FOP) will show your current room, as well as other rooms you can navigate to.",
+        "audioKey": "prologue_7"
+    },
+    {
+        "type": "event",
+        "name": "TUTORIAL_SHOW_PLAYER_TOKEN"
+    },
+    {
+        "type": "dialog",
+        "text": "Your current location is marked by this token.",
+        "audioKey": "prologue_8"
+    },
+    {
+        "type": "event",
+        "name": "TUTORIAL_HIGHLIGHT_PLAYER_CARD"
+    },
+    {
+        "type": "dialog",
+        "text": "To get out, you have to move. Select the 'Move' action.",
+        "audioKey": "prologue_9"
+    },
+    {
+        "type": "event",
+        "name": "TUTORIAL_REVEAL_MOVE_ACTION"
+    },
+    {
+        "type": "waitForEvent",
+        "name": "PLAYER_ACTION_SELECTED"
+    },
+    {
+        "type": "dialog",
+        "text": "Good. Now, select an adjacent room to move into."
+    },
+    {
+        "type": "event",
+        "name": "TUTORIAL_REVEAL_DESTINATION"
+    },
+    {
+        "type": "waitForEvent",
+        "name": "PLAYER_MOVED"
+    },
+    {
+        "type": "dialog",
+        "text": "..."
+    }
+]
