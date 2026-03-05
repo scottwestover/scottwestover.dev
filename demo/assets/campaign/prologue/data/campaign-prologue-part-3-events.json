@@ -1,0 +1,7 @@
+[
+    {
+        "type": "setBackground",
+        "image": "lobby-level-hallway",
+        "transition": { "type": "cut", "duration": 0 }
+    }
+]

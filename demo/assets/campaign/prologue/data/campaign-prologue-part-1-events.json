@@ -6,7 +6,7 @@
   },
   {
     "type": "dialog",
-    "text": "Your friend, Alex, has been missing for three days. The police have no leads. His last text was from the old, abandoned Crestwood Mall. You told him not to go.",
+    "text": "prologue_1",
     "audioKey": "prologue_1"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "type": "dialog",
-    "text": "You had to be sure. You had to look for yourself. The air inside is stale, heavy with the ghosts of forgotten commerce.",
+    "text": "prologue_2",
     "audioKey": "prologue_2"
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "type": "dialog",
-    "text": "Deep in the service corridors, you find something... out of place. A section of wall that feels wrong. It's damp to the touch, and the wallpaper hums with a faint, almost imperceptible energy.",
+    "text": "prologue_3",
     "audioKey": "prologue_3"
   },
   {
@@ -36,7 +36,7 @@
   },
   {
     "type": "dialog",
-    "text": "As your fingers make contact, the world dissolves into a deafening roar of static. The floor gives way. You are falling.",
+    "text": "prologue_4",
     "audioKey": "prologue_4"
   },
   {
