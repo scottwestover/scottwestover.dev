@@ -1,0 +1,10 @@
+{
+    "DEFAULT": "5_hallway",
+    "LL-001": "lobby-level-hallway",
+    "LL-002": "lobby-level-corner",
+    "LL-003": "lobby-level-dark-hallway",
+    "LL-004": "lobby-level-dead-end",
+    "LL-005": "lobby-level-destroyed-hall",
+    "LL-006": "lobby-level-lecture-hall",
+    "LL-065": "lobby-level-golden-stairs"
+}
