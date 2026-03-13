@@ -1,12 +1,10 @@
 baseurl = "https://scottwestover.dev/"
 title = "Scott Westover"
 languageCode = "en-us"
-paginate = "10" # Number of posts per page
 theme = "Mainroad"
-# disqusShortname = "scottwestover" # Enable comments by entering your Disqus shortname
 # googleAnalytics = "UA-64333144-2" # Enable Google Analytics by entering your tracking id
 
-[Author] # Used in authorbox
+[Params.author]
   name = "Scott Westover"
   bio = "Scott Westover is a Software Developer who loves coding, writing tutorials, participating in game jams, and learning about new technologies. When he is not coding, he is either spending time with his wife and two kids or is reading a great book. Scott is looking to form connections and share his knowledge."
   avatar = "https://secure.gravatar.com/avatar/d5b6863a31baa2c531949202b1de9c82"
@@ -73,3 +71,11 @@ theme = "Mainroad"
 
 [markup.goldmark.renderer]
   unsafe = true
+
+# Number of posts per page
+[pagination]
+  pagerSize = 10
+
+[services]
+  [services.disqus]
+    # shortname = "scottwestover" # Enable comments by entering your Disqus shortname
