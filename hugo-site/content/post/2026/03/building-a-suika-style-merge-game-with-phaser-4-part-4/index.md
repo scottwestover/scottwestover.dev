@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 4: Scoring and Game Over"
-date: 2026-03-12 08:00:02
+date: 2026-03-14 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -25,7 +25,6 @@ thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-4
 toc: false
 ---
 
-
 In [part 3](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-3/), we implemented the core interaction of our Suika-style game: players can drop fruits, and identical fruits merge into larger ones. Our game is now playable, but it lacks two crucial elements for any complete game: a way to track the player's performance and a condition for the game to end.
 
 In this part, we will add:
@@ -34,7 +33,7 @@ In this part, we will add:
 - A clear game-over condition when fruits stack too high.
 - The necessary UI elements to display the score.
 
----
+
 
 ## Tracking and Displaying the Score
 
@@ -82,7 +81,7 @@ We simply add the score for the merged fruits (larger fruits yield more points) 
 
 ![example 1](./images/building-a-suika-style-merge-game-with-phaser-4-part-4-1.png)
 
----
+
 
 ## Implementing the Game Over Condition
 
@@ -194,7 +193,7 @@ When the `CEILING_HIT` event fires, we set `#isGameOver` to `true` and hide the 
 
 ![example 2](./images/building-a-suika-style-merge-game-with-phaser-4-part-4-2.png)
 
----
+
 
 ## Cleanup
 
@@ -208,7 +207,7 @@ this.time.delayedCall(1000, () => {
 });
 ```
 
----
+
 
 ## Checkpoint
 
@@ -219,13 +218,15 @@ You now have a fully functional Suika-style game with:
 
 While we're just logging "Game Over!" to the console for now, the foundation is solid for adding a proper game-over screen and restart functionality.
 
----
+
 
 ## Next Up
 
 **Part 5: Polishing the Experience**
 
 With the core mechanics complete, the next step is to make our game feel more responsive and delightful. In Part 5, we'll explore improving the performance of our game by implementing an object pool.
+
+<!--With the core mechanics complete, the next step is to make our game feel more responsive and delightful. In [part 5](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-5/), we'll explore improving the performance of our game by implementing an object pool.-->
 
 You can find the completed source code for this article here on GitHub: [Part 4 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/4_score)
 

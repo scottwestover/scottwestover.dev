@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 6: Implementing a Restart System"
-date: 2026-03-12 08:00:02
+date: 2026-03-16 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -34,7 +34,6 @@ In this part, we will:
 
 By the end of this post, our game will have a complete play loop, allowing players to jump back into the action after a game over!
 
----
 
 ## UI Elements for Game Over
 
@@ -84,7 +83,7 @@ create() {
 }
 ```
 
----
+
 
 ## Displaying the Game Over UI
 
@@ -105,7 +104,7 @@ this.events.on(CUSTOM_EVENTS.CEILING_HIT, () => {
 ```
 Now, when the game ends, players will clearly see the "Game Over" message and have an option to restart.
 
----
+
 
 ## The `restartGame()` Method
 
@@ -159,7 +158,7 @@ Let's break down what this method does:
 
 ![example 1](./images/building-a-suika-style-merge-game-with-phaser-4-part-6-1.png)
 
----
+
 
 ## Conclusion & Checkpoint
 
@@ -174,7 +173,7 @@ Our Suika-style game now has:
 - An efficient object pooling system.
 - A complete game restart mechanism.
 
----
+
 
 ## Next Steps
 

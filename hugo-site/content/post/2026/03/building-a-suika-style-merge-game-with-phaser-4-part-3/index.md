@@ -25,7 +25,6 @@ thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-3
 toc: false
 ---
 
-
 In [part 2](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-2/), we brought our game to life with a physics simulation. We have fruits that can fall and stack in a container, but it's not much of a game without player interaction and a core mechanic.
 
 In Part 3, we're going to implement the heart of our Suika-style game. We will:
@@ -37,7 +36,7 @@ In Part 3, we're going to implement the heart of our Suika-style game. We will:
 
 By the end of this post, the core game loop will be fully playable!
 
----
+
 
 
 ## Creating the Fruit Dropper
@@ -78,7 +77,7 @@ We also need a helper method to handle updating the dropper's texture and size. 
 ```
 This method sets the texture, scales the image to match the fruit's radius, and sets its initial position.
 
----
+
 
 ## Handling Player Input
 
@@ -162,7 +161,7 @@ Now, if you click on the game, you should see a new fruit spawn.
 
 ![example 2](./images/building-a-suika-style-merge-game-with-phaser-4-part-3-2.png)
 
----
+
 
 ## The Merge Mechanic: Handling Collisions
 
@@ -213,7 +212,7 @@ Let's unpack the merge logic:
 
 ![example 3](./images/building-a-suika-style-merge-game-with-phaser-4-part-3-3.png)
 
----
+
 
 ## Checkpoint
 
@@ -224,13 +223,13 @@ Go ahead and run the game now! You should be able to:
 
 You have now implemented the complete core gameplay loop of a Suika-style game!
 
----
 
 ## Next Up
 
 **Part 4: Scoring and Game Over**
 
-Our game is playable, but it has no objective or challenge. In [part 4](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-4/), we'll add a scoring system to reward players for merging fruit and implement the game-over condition to create a proper challenge loop.
+<!--Our game is playable, but it has no objective or challenge. In [part 4](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-4/), we'll add a scoring system to reward players for merging fruit and implement the game-over condition to create a proper challenge loop.-->
+Our game is playable, but it has no objective or challenge. In part 4, we'll add a scoring system to reward players for merging fruit and implement the game-over condition to create a proper challenge loop.
 
 You can find the completed source code for this article here on GitHub: [Part 3 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/3_controls)
 

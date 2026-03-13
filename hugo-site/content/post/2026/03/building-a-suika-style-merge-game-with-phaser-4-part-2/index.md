@@ -36,7 +36,7 @@ By the end of this post, you will have:
 - Fruits that are created as circular physics bodies.
 - A way to drop fruits into the container to test our physics setup.
 
----
+
 
 ## Why Matter.js?
 
@@ -45,7 +45,7 @@ Phaser offers multiple physics engines, but Matter.js is the perfect choice for 
 - **True Circular Bodies:** Unlike Arcade physics, Matter.js supports true, perfectly round collision shapes, which is exactly what we need for our fruits.
 - **Fine-Grained Control:** It gives us detailed control over properties like friction, bounce, and mass, allowing us to tune the game's "feel" precisely.
 
----
+
 
 ## Enabling Matter.js in Your Project
 
@@ -68,7 +68,7 @@ const gameConfig = {
 ```
 We set `matter` as the default engine and rely on the default settings for the physics engine. Setting `debug: true` is incredibly helpful for development, as it draws all the physics shapes and boundaries, letting you see exactly what the engine is doing.
 
----
+
 
 ## Creating the World Bounds
 
@@ -92,7 +92,7 @@ create() {
 ```
 `this.matter.world.setBounds()` creates invisible static bodies around the edges of our screen. This single line creates a floor and walls on the left and right, effectively creating our container. We also add a visual "dashed line" to show the player where the game over zone will be.
 
----
+
 
 ## Creating a Physics-Enabled Fruit
 
@@ -136,7 +136,7 @@ Let's break down this powerful little function:
 3.  `.setFriction()` and `.setBounce()`: These methods let us tune how the fruit behaves. We want a little bounce to make interactions feel dynamic, and low friction so fruits can slide past each other into tight spaces.
 4.  `.setPosition(x, y)`: A crucial step! Calling `setCircle` can sometimes reset an object's position in Matter.js. Explicitly setting the position *after* defining the shape ensures it spawns exactly where you intend.
 
----
+
 
 ## Dropping Fruit for a Test Run
 
@@ -159,7 +159,7 @@ Run your game now. You should see a single, small fruit appear at the top, fall 
 
 Try adding a few more with different positions and delays to see how they stack!
 
----
+
 
 ## Checkpoint
 
@@ -171,7 +171,7 @@ At this point, your game has a solid foundation for physics-based gameplay:
 
 If you've set the `debug` flag to `true`, you'll see the circular colliders and the world bounds, which is a great way to verify everything is working as expected.
 
----
+
 
 ## Next Up
 

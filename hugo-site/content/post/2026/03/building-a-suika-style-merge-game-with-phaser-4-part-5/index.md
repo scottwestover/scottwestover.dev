@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 5: Performance with Object Pooling"
-date: 2026-03-12 08:00:02
+date: 2026-03-15 08:00:02
 tags: [
   "HTML5",
   "Game Development",
@@ -34,7 +34,7 @@ We will:
 - Modify our `#addFruit` method to retrieve and reinitialize objects from a pool.
 - Update our merge logic to "return" merged fruits to the pool instead of destroying them.
 
----
+
 
 ## What is Object Pooling?
 
@@ -42,7 +42,7 @@ Object pooling is a design pattern used in game development to manage the creati
 
 This reduces the overhead of memory allocation and garbage collection, leading to smoother gameplay and fewer performance spikes.
 
----
+
 
 ## Initializing Our Pool (Revisited)
 
@@ -62,7 +62,7 @@ create() {
 
 This group will hold all our fruit game objects, whether they are active on screen or currently inactive in the pool.
 
----
+
 
 ## Modifying `#addFruit` for Pooling
 
@@ -131,7 +131,7 @@ The key changes are:
 4.  **Resetting State:** For both new and re-used objects, we must ensure all properties (position, velocity, etc.) are correctly reset to their initial state for the new fruit. This includes `setStatic(false)` to ensure it can move again.
 5. We check to see if there is a stored timer from when we spawn the game object, and we clear it. This makes sure if we re-use a game object before the timer goes off, it will not trigger until we finish spawning the re-used object.
 
----
+
 
 ## Updating Merge Logic to Release Objects
 
@@ -163,7 +163,7 @@ By setting `setActive(false)`, `setVisible(false)`, `setStatic(true)`, and `this
 
 ![example 1](./images/building-a-suika-style-merge-game-with-phaser-4-part-5-1.png)
 
----
+
 
 ## Benefits of Object Pooling
 
@@ -172,19 +172,21 @@ Implementing object pooling provides several advantages:
 -   **Improved Performance:** Reusing existing objects is generally faster than allocating new memory and initializing fresh objects.
 -   **Predictable Performance:** It helps avoid performance spikes that can occur when many objects are destroyed or created simultaneously.
 
----
+
 
 ## Checkpoint
 
 Your game now includes a robust object pooling system for fruits. While you might not see a drastic difference in a simple game with few objects, this practice becomes essential for more complex games or those with a high volume of dynamic objects. You've significantly improved your game's efficiency under the hood!
 
----
+
 
 ## Next Up
 
 **Part 6: Implementing a Restart System**
 
 With a game-over condition in place, the next logical step is to allow the player to restart the game and play again. In Part 6, we'll implement a full restart system to complete the basic game loop.
+
+<!--With a game-over condition in place, the next logical step is to allow the player to restart the game and play again. In [part 6](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-6/), we'll implement a full restart system to complete the basic game loop.-->
 
 You can find the completed source code for this article here on GitHub: [Part 5 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/5_object_pool)
 

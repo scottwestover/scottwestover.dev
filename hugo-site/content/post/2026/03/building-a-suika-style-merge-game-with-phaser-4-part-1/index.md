@@ -38,7 +38,7 @@ In this first post, we will focus on these foundational goals:
 
 At this stage, we will not implement physics or player interaction. The goal is to build a strong, data-centric foundation before we add the complexity of physics and gameplay.
 
----
+
 
 ## The Game We Are Building
 
@@ -52,7 +52,7 @@ At its core, the game loop is simple and engaging:
 
 Everything else—visual effects, scoring logic, and UI—exists to support and enhance this core loop.
 
----
+
 
 ## Project Setup
 
@@ -65,8 +65,6 @@ Before we start adding any code, we will need to setup our project, and see how 
 ### Project Files
 
 In order to follow along with this tutorial, you will need to download the initial project files that will be used. The initial project files include all of the assets that will be used in the game, and the initial project structure for our Phaser 4 game.
-
-TODO: 
 
 You can find the initial project files here on GitHub: [Initial Project Files](https://github.com/devshareacademy/phaser-4-suika-game/tree/0_initial_project). Click [Direct Download](https://github.com/devshareacademy/phaser-4-suika-game/archive/refs/tags/0_initial_project.zip) to download the files.
 
@@ -203,7 +201,7 @@ Next, open `src/common/assets.js` and make two small additions:
 
 That's it! Because our `PreloadScene` automatically loops through the `IMAGE_ASSETS` array, it will find your new entry and load the `play_icon.png` file. You can now use this asset in any scene with `this.add.image(x, y, ASSET_KEYS.PLAY_ICON)`.
 
----
+
 
 ## Defining the Fruit Data Model
 
@@ -240,7 +238,7 @@ The **order** of this array is critical. A fruit's index in the `FRUITS` array d
 
 This data-driven approach makes the game incredibly easy to balance, modify, and extend. Want to add a new fruit? Just add a new object to the array and a corresponding image.
 
----
+
 
 ## Creating the Main Scene
 
@@ -276,7 +274,7 @@ We use modern JavaScript private fields (the `#` prefix) to keep our state encap
 - `#dropper`: A preview image showing the player which fruit will drop next and where.
 - `#isGameOver`: A flag to block input when the game has ended.
 
----
+
 
 ## Creating the Scene Skeleton
 
@@ -305,7 +303,7 @@ For now, all we're doing is setting the `isGameOver` flag and adding the backgro
 
 ![Project checkpoint](./images/building-a-suika-style-merge-game-with-phaser-4-part-1-2.png)
 
----
+
 
 ## Why Start This Way?
 
