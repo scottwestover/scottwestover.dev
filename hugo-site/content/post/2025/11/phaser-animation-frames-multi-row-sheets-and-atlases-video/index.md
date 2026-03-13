@@ -19,7 +19,7 @@ categories: [
 ]
 desc: "Ever wondered how Phaser handles sprite sheets with multiple rows? Or why some of your animations don’t start exactly where you expect? In this tutorial, we break down exactly how Phaser indexes frames, handles empty tiles, and works with texture atlases."
 draft: false
-thumbnail: "/post/2025/11/phaser-animation-frames-multi-row-sheets-and-atlases-video/images/phaser-animation-frames-multi-row-sheets-and-atlases-video-thumbnail.png"
+thumbnail: "/post/2025/11/phaser-animation-frames-multi-row-sheets-and-atlases-video/images/phaser-animation-frames-multi-row-sheets-and-atlases-video-thumbnail.jpg"
 toc: false
 ---
 
