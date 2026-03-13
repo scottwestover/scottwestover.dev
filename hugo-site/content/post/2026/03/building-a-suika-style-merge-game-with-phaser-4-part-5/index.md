@@ -20,7 +20,7 @@ categories: [
   "Suika"
 ]
 desc: "This is the fifth part of a tutorial series on building a Suika-style merge game with Phaser 4. This part focuses on optimizing game performance by implementing object pooling for fruits, reducing garbage collection and improving frame rates."
-draft: false
+draft: true
 thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-5/images/building-a-suika-style-merge-game-with-phaser-4-part-5-thumbnail.png"
 toc: false
 ---
@@ -186,8 +186,6 @@ Your game now includes a robust object pooling system for fruits. While you migh
 
 With a game-over condition in place, the next logical step is to allow the player to restart the game and play again. In Part 6, we'll implement a full restart system to complete the basic game loop.
 
-TODO: fix the links below
+You can find the completed source code for this article here on GitHub: [Part 5 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/5_object_pool)
 
-You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/tree/load_assets)
-
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-4-suika-game/discussions), or leave a comment down below.

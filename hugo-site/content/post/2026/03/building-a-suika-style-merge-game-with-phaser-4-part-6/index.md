@@ -20,7 +20,7 @@ categories: [
   "Suika"
 ]
 desc: "This is the sixth part of a tutorial series on building a Suika-style merge game with Phaser 4. This part focuses on implementing a complete restart system, including 'Game Over' UI and a 'Restart' button, to allow players to play new rounds after a game over."
-draft: false
+draft: true
 thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-6/images/building-a-suika-style-merge-game-with-phaser-4-part-6-thumbnail.png"
 toc: false
 ---
@@ -157,6 +157,8 @@ Let's break down what this method does:
 3.  **Clears Fruits:** It iterates through all children in `this.#fruitGroup`. For each active fruit, it deactivates it, hides it, sets it as static, and removes its physics body from the active Matter.js world. This effectively "returns" all fruits to our object pool, ready for reuse.
 4.  **Resets Dropper:** The dropper is reset to show the initial fruit, and made visible again.
 
+![example 1](./images/building-a-suika-style-merge-game-with-phaser-4-part-6-1.png)
+
 ---
 
 ## Conclusion & Checkpoint
@@ -184,3 +186,7 @@ With the core mechanics and a full game loop in place, your Suika-style game is 
 -   **More Fruit Types:** Expanding the `FRUITS` array and adding more assets.
 
 Congratulations on building a complete physics-based merge game in Phaser!
+
+You can find the completed source code for this article here on GitHub: [Part 6 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/6_restart_game)
+
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-4-suika-game/discussions), or leave a comment down below.

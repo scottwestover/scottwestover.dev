@@ -20,7 +20,7 @@ categories: [
   "Suika"
 ]
 desc: "This is the fourth part of a tutorial series on building a Suika-style merge game with Phaser 4. This part focuses on implementing a scoring system to reward merges and a game-over condition when fruits stack too high, completing the core game loop."
-draft: false
+draft: true
 thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-4/images/building-a-suika-style-merge-game-with-phaser-4-part-4-thumbnail.png"
 toc: false
 ---
@@ -227,8 +227,6 @@ While we're just logging "Game Over!" to the console for now, the foundation is 
 
 With the core mechanics complete, the next step is to make our game feel more responsive and delightful. In Part 5, we'll explore improving the performance of our game by implementing an object pool.
 
-TODO: fix the links below
+You can find the completed source code for this article here on GitHub: [Part 4 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/4_score)
 
-You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/tree/load_assets)
-
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-4-suika-game/discussions), or leave a comment down below.

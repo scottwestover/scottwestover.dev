@@ -68,7 +68,7 @@ In order to follow along with this tutorial, you will need to download the initi
 
 TODO: 
 
-You can find the initial project files here on GitHub: [Initial Project Files](https://github.com/devshareacademy/phaser-4-suika-game/tag/solitaire_initial_project). Click [Direct Download](https://github.com/devshareacademy/phaser-4-suika-game/archive/refs/tags/solitaire_initial_project.zip) to download the files.
+You can find the initial project files here on GitHub: [Initial Project Files](https://github.com/devshareacademy/phaser-4-suika-game/tree/0_initial_project). Click [Direct Download](https://github.com/devshareacademy/phaser-4-suika-game/archive/refs/tags/0_initial_project.zip) to download the files.
 
 You will find the following files in the zip file:
 
@@ -322,10 +322,9 @@ In the next post, we will bring the game to life by enabling the Matter.js physi
 
 All right, with those last changes, that brings an end to this part of the tutorial. In this part, we set up our initial project structure, learned how to load assets, and defined the core data model for our Suika-style game.
 
-TODO: fix the links below
+You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/1_project_setup)
 
-You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/tree/load_assets)
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-4-suika-game/discussions), or leave a comment down below.
 
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
-
-In [part 2](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-2/) of this series, we will start to bring our game to life by adding physics.
+<!-- In [part 2](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-2/) of this series, we will start to bring our game to life by adding physics. -->
+In part 2 of this series, we will start to bring our game to life by adding physics.

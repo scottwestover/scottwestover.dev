@@ -20,7 +20,7 @@ categories: [
   "Suika"
 ]
 desc: "This is the third part of a tutorial series on building a Suika-style merge game with Phaser 4. This part focuses on implementing player controls for dropping fruits and the core merging mechanic where identical fruits combine into larger ones."
-draft: false
+draft: true
 thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-3/images/building-a-suika-style-merge-game-with-phaser-4-part-3-thumbnail.png"
 toc: false
 ---
@@ -232,8 +232,6 @@ You have now implemented the complete core gameplay loop of a Suika-style game!
 
 Our game is playable, but it has no objective or challenge. In [part 4](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-4/), we'll add a scoring system to reward players for merging fruit and implement the game-over condition to create a proper challenge loop.
 
-TODO: fix the links below
+You can find the completed source code for this article here on GitHub: [Part 3 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/3_controls)
 
-You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/tree/load_assets)
-
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-4-suika-game/discussions), or leave a comment down below.

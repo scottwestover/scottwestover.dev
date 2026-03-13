@@ -20,7 +20,7 @@ categories: [
   "Suika"
 ]
 desc: "This is the second part of a tutorial series on building a Suika-style merge game with Phaser 4. This part focuses on integrating Matter.js physics to enable realistic falling and stacking of fruits within the game."
-draft: false
+draft: true
 thumbnail: "/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-2/images/building-a-suika-style-merge-game-with-phaser-4-part-2-thumbnail.png"
 toc: false
 ---
@@ -177,10 +177,10 @@ If you've set the `debug` flag to `true`, you'll see the circular colliders and 
 
 **Part 3: Player Controls and Merging Mechanics**
 
-In [part 3](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-3/), we'll tackle the core gameplay loop. We'll add player controls to let the user decide where to drop fruits, and then implement the most important mechanic: detecting collisions between identical fruits and merging them into the next fruit in the chain. This is where it really starts to feel like a game!
+<!-- In [part 3](/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-3/), we'll tackle the core gameplay loop. We'll add player controls to let the user decide where to drop fruits, and then implement the most important mechanic: detecting collisions between identical fruits and merging them into the next fruit in the chain. This is where it really starts to feel like a game!
+-->
+In part 3, we'll tackle the core gameplay loop. We'll add player controls to let the user decide where to drop fruits, and then implement the most important mechanic: detecting collisions between identical fruits and merging them into the next fruit in the chain. This is where it really starts to feel like a game!
 
-TODO: fix the links below
+You can find the completed source code for this article here on GitHub: [Part 2 Source Code](https://github.com/devshareacademy/phaser-4-suika-game/tree/2_physics)
 
-You can find the completed source code for this article here on GitHub: [Part 1 Source Code](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/tree/load_assets)
-
-If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-3-solitaire-tutorial/discussions), or leave a comment down below.
+If you run into any issues, please reach out via [GitHub Discussions](https://github.com/devshareacademy/phaser-4-suika-game/discussions), or leave a comment down below.
