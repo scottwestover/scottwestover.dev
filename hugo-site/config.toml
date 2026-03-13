@@ -85,3 +85,7 @@ theme = "Mainroad"
     # shortname = "scottwestover" # Enable comments by entering your Disqus shortname
   [services.googleAnalytics]
     # ID = "UA-64333144-2" # Enable Google Analytics by entering your tracking id
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
