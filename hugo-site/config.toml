@@ -2,7 +2,6 @@ baseurl = "https://scottwestover.dev/"
 title = "Scott Westover"
 languageCode = "en-us"
 theme = "Mainroad"
-# googleAnalytics = "UA-64333144-2" # Enable Google Analytics by entering your tracking id
 
 [Params.author]
   name = "Scott Westover"
@@ -84,3 +83,5 @@ theme = "Mainroad"
 [services]
   [services.disqus]
     # shortname = "scottwestover" # Enable comments by entering your Disqus shortname
+  [services.googleAnalytics]
+    # ID = "UA-64333144-2" # Enable Google Analytics by entering your tracking id
