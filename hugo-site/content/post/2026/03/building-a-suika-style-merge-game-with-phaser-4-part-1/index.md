@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 1: Project Setup and Data-Driven Design"
-date: 2026-03-11 08:00:02
+date: 2026-03-13 08:00:02
 tags: [
   "HTML5",
   "Game Development",

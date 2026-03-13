@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 4: Scoring and Game Over"
-date: 2026-03-14 08:00:02
+date: 2026-04-14 08:00:02
 tags: [
   "HTML5",
   "Game Development",

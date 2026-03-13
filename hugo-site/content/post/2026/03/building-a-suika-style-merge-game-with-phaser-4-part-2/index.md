@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 2: Physics-Based Falling and Stacking"
-date: 2026-03-12 08:00:02
+date: 2026-04-12 08:00:02
 tags: [
   "HTML5",
   "Game Development",

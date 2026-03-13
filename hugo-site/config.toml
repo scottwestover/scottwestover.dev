@@ -38,7 +38,7 @@ theme = "Mainroad"
   single = false # Configure layout for single pages
   # Enable widgets in given order
   # widgets = ["search", "recent", "categories", "taglist", "social"]
-  widgets = ["social", "recent", "taglist", "categories"]
+  widgets = ["social", "subscribe", "recent", "taglist", "categories"]
 
 [Params.widgets]
   recent_num = 3 # Set the number of articles in the "Recent articles" widget
@@ -60,6 +60,11 @@ theme = "Mainroad"
 [[Params.widgets.social.custom]]
   title = "Youtube"
   url = "https://www.youtube.com/channel/UCe6435tNOMf7kLls7pOb-4g"
+
+[Params.widgets.subscribe]
+  title = "Subscribe"
+  accountId = "2188226"
+  formId = "4Lp5Iv"
 
 [Params.style.vars]
   highlightColor = "#e22d30" # Override highlight color

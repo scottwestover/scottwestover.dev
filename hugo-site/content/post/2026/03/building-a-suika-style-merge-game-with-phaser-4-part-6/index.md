@@ -1,6 +1,6 @@
 ---
 title: "Building a Suika-Style Merge Game with Phaser 4 Part 6: Implementing a Restart System"
-date: 2026-03-16 08:00:02
+date: 2026-04-16 08:00:02
 tags: [
   "HTML5",
   "Game Development",
