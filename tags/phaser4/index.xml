@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Phaser4 on Scott Westover</title><link>https://scottwestover.dev/tags/phaser4/</link><description>Recent content in Phaser4 on Scott Westover</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 13 Mar 2026 08:00:02 +0000</lastBuildDate><atom:link href="https://scottwestover.dev/tags/phaser4/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a Suika-Style Merge Game with Phaser 4 Part 1: Project Setup and Data-Driven Design</title><link>https://scottwestover.dev/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-1/</link><pubDate>Fri, 13 Mar 2026 08:00:02 +0000</pubDate><guid>https://scottwestover.dev/post/2026/03/building-a-suika-style-merge-game-with-phaser-4-part-1/</guid><description>&lt;p&gt;In this tutorial series, we will build a physics-based merge game inspired by &lt;em&gt;Suika Game&lt;/em&gt; using &lt;strong&gt;Phaser&lt;/strong&gt; and its built-in physics engine, &lt;strong&gt;Matter.js&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This type of game looks simple on the surface, but it is an excellent vehicle for teaching several important game development concepts, including data-driven design, physics-based gameplay, collision-driven mechanics, and clean scene architecture.&lt;/p&gt;
+&lt;p&gt;In this first post, we will focus on these foundational goals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Understanding the overall game concept.&lt;/li&gt;
+&lt;li&gt;Designing a data-driven system for our fruits.&lt;/li&gt;
+&lt;li&gt;Setting up the project structure and loading assets.&lt;/li&gt;
+&lt;li&gt;Preparing our main &lt;code&gt;GameScene&lt;/code&gt; for the gameplay systems to come.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this stage, we will not implement physics or player interaction. The goal is to build a strong, data-centric foundation before we add the complexity of physics and gameplay.&lt;/p&gt;</description></item></channel></rss>
